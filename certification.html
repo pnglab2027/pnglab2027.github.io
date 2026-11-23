@@ -1,0 +1,1671 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>기업인증 — 윤파트너스</title>
+<meta name="description" content="벤처·이노비즈 등 기업인증 9종. 가점이 되는 인증부터 순서대로.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="윤파트너스">
+<meta property="og:title" content="기업인증 — 윤파트너스">
+<meta property="og:description" content="벤처·이노비즈 등 기업인증 9종. 가점이 되는 인증부터 순서대로.">
+<meta property="og:image" content="/images/1_브랜드/OG_공유이미지_1200x630.png">
+<link rel="icon" href="/images/1_브랜드/파비콘_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="vb-skip" href="#main">본문으로 건너뛰기</a>
+<header class="vb-hd" id="vbHd">
+  <div class="vb-hd-in">
+    <a class="vb-logo" href="/index.html"><img src="/images/1_브랜드/YOON_PARTNERS.png" alt="윤파트너스" width="519" height="160"></a>
+    <nav class="vb-nav" aria-label="주요 메뉴">
+      <a href="/index.html">홈</a>
+      <a href="/about.html">회사소개</a>
+      <a href="/funding.html">자금조달</a>
+      <a href="/scaleup.html">스케일업</a>
+      <a href="/certification.html" aria-current="page">기업인증</a>
+    </nav>
+    <div class="vb-hd-cta">
+      <a class="vb-tel" href="tel:[대표번호]"><small>TEL</small>[대표번호]</a>
+      <a class="vb-hd-btn" href="#apply">무료 상담 신청</a>
+    </div>
+    <button class="vb-burger" type="button" id="vbBurger" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="vbsec" doz_type="section">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 공통 보정 (모바일 여백 · 신청 바로가기 · 상단 디자인)
+     아임웹에는 모바일 전용 여백 설정이 없어서, 이 조각으로 대신합니다.
+     페이지마다 코드 위젯 하나에 한 번만 넣으면 그 페이지 전체에 적용됩니다.
+     ══════════════════════════════════════════════════════════════ -->
+<div class="vb-mobile-pad" aria-hidden="true"></div>
+<style>
+  .vb-mobile-pad{display:block;width:100%;height:0;overflow:hidden}
+</style>
+
+<script>
+/* ── 모바일에서 섹션 상하 여백을 비율로 줄입니다 ──
+   여백을 0 으로 둔 섹션(상단 띠 등)은 그대로 0 으로 둡니다. */
+(function () {
+  var MAP = null;
+  function read() {
+    MAP = [].slice.call(document.querySelectorAll('[doz_type="section"]')).map(function (s) {
+      if (s.dataset.vbpt === undefined) {
+        s.dataset.vbpt = String(parseFloat(s.style.paddingTop) || 0);
+        s.dataset.vbpb = String(parseFloat(s.style.paddingBottom) || 0);
+      }
+      return { el: s, t: +s.dataset.vbpt, b: +s.dataset.vbpb };
+    });
+  }
+  function apply() {
+    read();
+    var w = window.innerWidth;
+    var m = w <= 400 ? 0.58 : (w <= 767 ? 0.70 : 0);
+    MAP.forEach(function (o) {
+      if (!m) {
+        o.el.style.removeProperty('padding-top');
+        o.el.style.removeProperty('padding-bottom');
+        if (o.t) o.el.style.paddingTop = o.t + 'px';
+        if (o.b) o.el.style.paddingBottom = o.b + 'px';
+        return;
+      }
+      o.el.style.setProperty('padding-top', Math.round(o.t * m) + 'px', 'important');
+      o.el.style.setProperty('padding-bottom', Math.round(o.b * m) + 'px', 'important');
+    });
+  }
+  apply();
+  window.addEventListener('resize', apply);
+  window.addEventListener('load', apply);
+  setTimeout(apply, 500);
+  setTimeout(apply, 1500);
+})();
+</script>
+
+<script>
+/* ── 페이지 안의 "#apply" 링크를 신청 폼으로 보냅니다 ──
+   아임웹에는 앵커(#apply)가 없어서, 스크립트가 신청 섹션을 찾아 부드럽게 내려줍니다.
+   아임웹이 window.scrollTo 의 smooth 옵션을 무시하므로 직접 한 칸씩 움직입니다. */
+(function () {
+  function sectionOf(el) {
+    return el ? (el.closest('[doz_type="section"]') || el) : null;
+  }
+  function target(hash) {
+    if (hash === '#selfcheck') {
+      return sectionOf(document.getElementById('selfcheck')
+        || document.querySelector('.vbw .ck, .vbw .chk'));
+    }
+    return sectionOf(document.getElementById('vbFormSlot')
+      || document.querySelector('.form-widget'));
+  }
+  function glide(to) {
+    var from = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var dist = to - from;
+    if (Math.abs(dist) < 2) return;
+    var dur = Math.min(900, Math.max(360, Math.abs(dist) * 0.55));
+    var t0 = Date.now();
+    var timer = setInterval(function () {
+      var p = Math.min(1, (Date.now() - t0) / dur);
+      var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+      window.scrollTo(0, Math.round(from + dist * e));
+      if (p >= 1) clearInterval(timer);
+    }, 16);
+  }
+  var HASH = { '#apply': 1, '#selfcheck': 1 };
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.charAt(0) !== '#' || !HASH[h]) return;
+    var t = target(h);
+    if (!t) return;
+    e.preventDefault();
+    var top = t.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0);
+    glide(Math.max(0, top - 80));
+  }, true);
+})();
+</script>
+
+<style>
+/* ══════ 상단(헤더) 디자인 — 초안에 맞춤 ══════
+   아임웹 기본 상단을 그대로 두고 모양만 입힙니다.
+   기본 헤더와 스크롤 시 따라오는 고정 헤더에 동시에 적용됩니다. */
+#doz_header_wrap{--vbn:#3A5BA8;--vbg:#FCD065;--vbi:#4D4643}
+
+@media (min-width:768px){
+  #inline_header_normal{height:78px!important}
+  #doz_header_wrap [data-widget-type="inline_logo"] img{width:190px!important;height:auto!important}
+  #inline_header_fixed [data-widget-type="inline_logo"] img{width:168px!important}
+}
+
+/* 메뉴 — 호버하면 골드 밑줄, 지금 보는 페이지는 네이비 밑줄 */
+#doz_header_wrap ._inline_menu_container li>a{
+  font-size:15.5px!important;font-weight:600!important;color:var(--vbi)!important;
+  padding:0 17px!important;position:relative!important;letter-spacing:-.012em!important}
+#doz_header_wrap ._inline_menu_container li>a::after{
+  content:"";position:absolute;left:17px;right:17px;bottom:5px;height:2px;
+  background:var(--vbg);transform:scaleX(0);transform-origin:left;
+  transition:transform .22s ease}
+#doz_header_wrap ._inline_menu_container li>a:hover{color:var(--vbn)!important}
+#doz_header_wrap ._inline_menu_container li>a:hover::after{transform:scaleX(1)}
+#doz_header_wrap ._inline_menu_container li.vb-on>a{color:var(--vbn)!important;font-weight:800!important}
+#doz_header_wrap ._inline_menu_container li.vb-on>a::after{background:var(--vbn);transform:scaleX(1)}
+
+/* 전화번호 + 무료상담 버튼 */
+#doz_header_wrap [data-widget-type="inline_button"]{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important}
+#doz_header_wrap a.vb-tel{
+  display:inline-flex!important;align-items:baseline!important;gap:6px!important;
+  font-weight:900!important;font-size:18.5px!important;color:var(--vbn)!important;
+  letter-spacing:-.02em!important;white-space:nowrap!important;background:none!important;
+  height:auto!important;padding:0!important;box-shadow:none!important;border:0!important}
+#doz_header_wrap a.vb-tel small{font-size:10.5px;font-weight:800;color:#9BB3DF;letter-spacing:.1em}
+#doz_header_wrap [data-widget-type="inline_button"] a:not(.vb-tel){
+  background:var(--vbg)!important;background-color:var(--vbg)!important;color:var(--vbn)!important;
+  border:0!important;border-radius:6px!important;height:42px!important;padding:0 20px!important;
+  font-size:14.5px!important;font-weight:800!important;display:inline-flex!important;
+  align-items:center!important;justify-content:center!important;letter-spacing:-.01em!important;
+  box-shadow:0 6px 16px rgba(252,208,101,.28)!important;
+  transition:background-color .18s ease,box-shadow .18s ease!important}
+#doz_header_wrap [data-widget-type="inline_button"] a:not(.vb-tel):hover{
+  background-color:#EFBB3F!important;box-shadow:0 8px 20px rgba(252,208,101,.38)!important}
+@media (max-width:1180px){#doz_header_wrap a.vb-tel{display:none!important}}
+</style>
+
+<script>
+/* ── 상단 보정 : 무료상담 버튼 링크 · 현재 메뉴 표시 · 전화번호 ──
+   기본 헤더와 고정 헤더를 한 번에 처리합니다.
+   아임웹에서 버튼 링크를 따로 고치지 않으셔도 됩니다. */
+(function () {
+  function fix() {
+    var hdr = document.getElementById('doz_header_wrap');
+    if (!hdr) return;
+
+    /* 1. 무료상담 버튼 → 신청 폼 */
+    var btns = hdr.querySelectorAll('[data-widget-type="inline_button"] a');
+    Array.prototype.forEach.call(btns, function (a) {
+      if (a.className && a.className.indexOf('vb-tel') > -1) return;
+      var t = (a.textContent || '').replace(/\s/g, '');
+      if (/상담|신청|문의/.test(t) && a.getAttribute('href') !== '#apply') {
+        a.setAttribute('href', '#apply');
+      }
+    });
+
+    /* 2. 지금 보는 페이지 메뉴에 표시 */
+    var path = location.pathname.replace(/\/+$/, '');
+    if (path === '') path = '/30';
+    var lis = hdr.querySelectorAll('._inline_menu_container li');
+    Array.prototype.forEach.call(lis, function (li) {
+      var a = li.querySelector('a');
+      if (!a) return;
+      var h = (a.getAttribute('href') || '').split('?')[0].replace(/#.*$/, '').replace(/\/+$/, '');
+      if (h && h === path) li.classList.add('vb-on');
+    });
+
+    /* 3. 버튼 왼쪽에 대표번호 */
+    var wraps = hdr.querySelectorAll('[data-widget-type="inline_button"]');
+    Array.prototype.forEach.call(wraps, function (w) {
+      if (w.querySelector('.vb-tel')) return;
+      var s = document.createElement('a');
+      s.className = 'vb-tel';
+      s.href = 'tel:[대표번호]';
+      s.innerHTML = '<small>TEL</small>[대표번호]';
+      w.insertBefore(s, w.firstChild);
+    });
+  }
+  fix();
+  window.addEventListener('load', fix);
+  setTimeout(fix, 600);
+  setTimeout(fix, 1800);
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 기업인증 — 상단 제목
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     기업인증 1 — 섹션 배경·여백 설정하지 마세요(여백 0)
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .subhero{background:var(--navy-50);border-bottom:1px solid var(--line);padding:56px 0 60px}
+  .vbw .subhero h1{font-size:clamp(28px,4.4vw,44px);color:var(--navy);margin:14px 0 0;letter-spacing:-.02em}
+  .vbw .subhero p{margin-top:18px;font-size:16.5px;color:var(--ink-2);max-width:660px;line-height:1.78}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero{text-align:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .subhero p{margin-left:auto;margin-right:auto}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw section, .vbw .subhero{scroll-margin-top:calc(var(--hd) + 10px)}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .subhero{padding:38px 0 42px}
+    .vbw .sec-head{margin-bottom:28px}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+  /* -- 좌우 끝까지 꽉 차는 상단 띠 -- */
+  .vbw .subhero{width:100vw!important;max-width:100vw!important;
+    margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
+    padding:62px 24px 66px!important}
+  .vbw .subhero .wrap{max-width:1120px;margin:0 auto;padding:0;text-align:center}
+  .vbw .subhero p{margin-left:auto;margin-right:auto}
+  @media (max-width:720px){.vbw .subhero{padding:44px 20px 46px!important}}
+
+</style>
+
+<div class="vbw">
+<div class="subhero">
+      <div class="wrap">
+      <div class="eyebrow">Certification</div>
+      <h1>인증은 <b>세금을 줄이고</b>,<br>기업가치와 정부지원 가점을 <b>올립니다</b>.</h1>
+      <p>세제 혜택만 보고 받는 게 아니라, 다음 단계의 자금과 지원사업까지 계산해서 순서를 잡습니다. 9개 분야를 전부 다룹니다.</p>
+    
+      </div>
+    </div>
+</div>
+
+<script>
+(function () {
+  /* 좌우 끝까지 꽉 차는 띠 — 스크롤바 폭 때문에 100vw 가 어긋나는 것을 바로잡습니다 */
+  var SEL = '.vbw .subhero';
+  var vbLastW = -1;
+  function vbBleed() {
+    var list = document.querySelectorAll(SEL);
+    if (!list.length) return;
+    var nowW = document.documentElement.clientWidth;
+    if (nowW === vbLastW) return;
+    vbLastW = nowW;
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      el.style.setProperty('width', 'auto', 'important');
+      el.style.setProperty('max-width', 'none', 'important');
+      el.style.setProperty('margin-left', '0', 'important');
+      el.style.setProperty('margin-right', '0', 'important');
+      var cw = document.documentElement.clientWidth;
+      var left = el.getBoundingClientRect().left;
+      el.style.setProperty('width', cw + 'px', 'important');
+      el.style.setProperty('max-width', cw + 'px', 'important');
+      el.style.setProperty('margin-left', (-left) + 'px', 'important');
+    }
+  }
+  vbBleed();
+  window.addEventListener('resize', function () { vbLastW = -1; vbBleed(); });
+  window.addEventListener('load', function () { vbLastW = -1; vbBleed(); });
+  /* 세로 스크롤바가 뒤늦게 생기면 화면 폭이 달라집니다. 10초 동안 지켜보다 달라지면 다시 맞춥니다. */
+  var vbN = 0, vbPoll = setInterval(function () { vbBleed(); if (++vbN > 25) clearInterval(vbPoll); }, 400);
+})();
+</script>
+
+</section>
+<section class="vbsec" doz_type="section" style="background:#FFFFFF;padding-top:80px;padding-bottom:80px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 인증 혜택 2카드 + 취급 인증 9종
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     기업인증 2 — 배경 흰색 / 상하 여백 80px
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  .vbw .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .vbw .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px 22px}
+  .vbw .card .ic{width:44px;height:44px;border:1.5px solid var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .vbw .card h3{font-size:18px;color:var(--navy)}
+  .vbw .card .cd{font-size:14.5px;color:var(--ink-2);margin-top:10px;line-height:1.75}
+  .vbw .card .more{margin-top:16px;font-size:13px;font-weight:700;color:var(--navy);display:inline-flex;gap:5px;align-items:center}
+  .vbw .card .ic svg{width:24px;height:24px}
+  .vbw .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .vbw .tile{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 18px;display:flex;gap:14px;align-items:flex-start}
+  .vbw .tile .tic{width:42px;height:42px;flex:none;border-radius:8px;background:var(--navy-50);display:flex;align-items:center;justify-content:center}
+  .vbw .tile .tic svg{width:24px;height:24px}
+  .vbw .tile:hover .tic{background:var(--gold-100)}
+  .vbw .tile b{display:block;font-size:15px;font-weight:700;color:var(--ink);line-height:1.45}
+  .vbw .tile:hover b{color:var(--navy)}
+  .vbw .tile small{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:5px;line-height:1.55}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst{flex-direction:column;align-items:stretch;gap:0;padding:0;overflow:hidden}
+  .vbw .tile.inst .ilogo{display:flex;align-items:center;justify-content:center;height:86px;
+    background:#fff;border-bottom:1px solid var(--line);padding:0 18px}
+  .vbw .tile.inst .ilogo img{max-height:34px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block}
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .tile.inst .itx{display:block;padding:16px 14px 18px;text-align:center}
+  .vbw .tile.inst .itx b{font-size:15px}
+  .vbw .tile.inst:hover .ilogo{background:var(--navy-50)}
+  @media (max-width:720px){
+    .vbw .tile.inst .ilogo{height:72px}
+    .vbw .tile.inst .ilogo img{max-height:28px}
+    .vbw .tile.inst .itx{padding:13px 10px 15px}
+    .vbw .tile.inst .itx b{font-size:14px}
+  }
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .card .ic{border:none;background:var(--navy-50);font-size:23px;width:48px;height:48px;border-radius:12px}
+  .vbw .card:hover .ic{background:var(--gold-100)}
+  .vbw .tile .tic{font-size:21px;border-radius:10px}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  .vbw .tile .tic{transition:background-color .18s ease}
+  .vbw .card:hover, .vbw .tile:hover{background:var(--navy-50);border-color:var(--navy-300)}
+  @media (max-width:1024px){
+    .vbw .proc, .vbw .svc, .vbw .grid4, .vbw .split{grid-template-columns:repeat(2,1fr)}
+    .vbw .stages, .vbw .grid3{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .sec-head{margin-bottom:28px}
+    .vbw .stages, .vbw .grid3, .vbw .split{grid-template-columns:1fr}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+</style>
+
+<div class="vbw">
+      <div class="split" style="margin-bottom:52px">
+        <div class="card"><h3><span class="emo">💳</span>세제 · 자금</h3><p class="cd">법인세·소득세 감면, 정책자금 심사 시 가점, 보증 한도와 금리 조건이 달라집니다.</p></div>
+        <div class="card"><h3><span class="emo">📦</span>판로 · 인력</h3><p class="cd">공공조달 우대, 지원사업 신청 자격, 인력 지원 사업 참여 기회가 열립니다.</p></div>
+      </div>
+
+      <div class="sec-head">
+        <div class="eyebrow">Certification · 9</div>
+        <h2 class="sec-h"><span class="emo">🏅</span>취급 인증 <b>9종</b></h2>
+        <p class="sec-p">인증마다 신청 자격 · 유효기간 · 소요기간 · 준비 서류가 다릅니다. 해당 여부부터 확인해 드립니다.</p>
+      </div>
+      <div class="grid3">
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">🚀</span></span><span><b>벤처기업 인증</b><small>세제 · 자금 · 인력 혜택</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">💡</span></span><span><b>이노비즈</b><small>기술혁신형 중소기업</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">📈</span></span><span><b>메인비즈</b><small>경영혁신형 중소기업</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">🔬</span></span><span><b>기업부설연구소</b><small>연구개발전담부서 포함</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">👩‍💼</span></span><span><b>여성기업 확인서</b><small>공공조달 의무구매 5%</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">⚒️</span></span><span><b>뿌리기업 확인서</b><small>주조 · 금형 · 용접 · 표면처리 등</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">🔩</span></span><span><b>소재·부품·장비 전문기업</b><small>소부장 특별법 기준 확인</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">♿</span></span><span><b>장애인기업 확인서</b><small>공공조달 의무구매 1%</small></span></a>
+        <a class="tile" href="#apply"><span class="tic"><span class="emo">📜</span></span><span><b>ISO 9001 · 14001 · 45001 / ESG</b><small>품질 · 환경 · 안전보건 · 지속가능</small></span></a>
+      </div>
+</div>
+
+<script>
+(function () {
+  /* 스크립트 없음 */
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section" style="background:#F2F6FC;padding-top:72px;padding-bottom:72px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 인증 순서 안내 띠
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     기업인증 3 — 배경 연한 네이비 #F2F6FC / 상하 여백 72px
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  .vbw .simb{border:1px solid var(--navy-300);background:#fff;border-radius:10px;padding:26px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .vbw .simb h3{font-size:20px;color:var(--navy)}
+  .vbw .simb p{font-size:14.5px;color:var(--ink-2);margin-top:7px;max-width:560px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .sec-head{margin-bottom:28px}
+    .vbw .simb{padding:22px 20px}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+</style>
+
+<div class="vbw">
+      <div class="simb">
+        <div>
+          <h3><span class="emo">🗺️</span>벤처, 이노비즈, 메인비즈 — 뭐부터 받아야 하나요?</h3>
+          <p>업력과 매출 구간에 따라 받는 순서가 달라집니다. 스케일업 로드맵에서 우리 회사 단계에 맞는 인증을 확인해 보세요.</p>
+        </div>
+        <a class="btn btn-navy" href="/32">스케일업 로드맵 보기</a>
+      </div>
+</div>
+
+<script>
+(function () {
+  /* 스크립트 없음 */
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section" style="background:#3A5BA8;padding-top:96px;padding-bottom:96px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 신청 안내 문구 + 아임웹 입력폼 (좌우 2단)
+
+     넣는 곳 : 입력폼이 들어 있는 섹션의 "바로 위 섹션"에 코드 위젯으로
+     섹션 설정 : 배경 #3A5BA8 / 글자색 흰색 / 상하 여백 96px
+
+     ※ 입력폼 위젯을 이 코드 "바로 아래"에, 같은 섹션 안에 넣으세요.
+        스크립트가 폼을 오른쪽 칸으로 끌어옵니다. 폼 위젯을 지우지 마세요.
+        한 섹션에 담아야 '섹션 반복'으로 전 페이지에 쓸 수 있습니다.
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    /* 윤파트너스 브랜드 컬러 — 인디고 #3A5BA8 · 스카이 #98D5E7 · 옐로 #FCD065 · 먹 #332B29 */
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-50:#F2F6FC;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --danger:#B4341F;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+
+  /* ───────── 좌우 2단 ───────── */
+  .vbapply,.vbapply *{box-sizing:border-box}
+  .vbapply{display:grid;max-width:1120px;margin:0 auto;font-family:var(--sans);
+    grid-template-columns:1fr 1.08fr;
+    grid-template-rows:auto auto;
+    grid-template-areas:"cta form" "cont form";
+    column-gap:clamp(32px,4vw,60px);row-gap:0;align-items:start}
+  .vbcta{grid-area:cta}
+  #vbFormSlot{grid-area:form;align-self:center}
+  .vbcontact{grid-area:cont}
+
+  /* ───────── 왼쪽 안내 문구 ───────── */
+  .vbcta{text-align:left}
+  .vbcta .eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+  .vbcta .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbcta h2{margin:16px 0 0;font-family:var(--display);font-weight:900;
+    font-size:clamp(26px,3.4vw,40px);line-height:1.28;letter-spacing:-.03em;color:#fff}
+  .vbcta h2 b{font-weight:inherit;color:var(--gold);
+    text-shadow:0 0 20px rgba(252,208,101,.55),0 0 46px rgba(252,208,101,.28)}
+  .vbcta .free{display:inline-flex;align-items:center;margin-top:20px;
+    background:rgba(252,208,101,.16);border:1px solid var(--gold);color:var(--gold);
+    font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px}
+  .vbcta .free b{font-family:var(--display);font-weight:900;margin-right:4px}
+  .vbcta .cp{margin:18px 0 0;font-size:16px;line-height:1.8;color:#D9E3F5}
+  .vbcontact{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);
+    display:grid;gap:7px;font-size:14.5px;color:#D9E3F5;line-height:1.7;text-align:left}
+  .vbcontact b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,32px);
+    color:#fff;letter-spacing:-.02em;margin-bottom:5px}
+
+  /* ───────── 오른쪽 폼 자리 ───────── */
+  #vbFormSlot{min-width:0}
+
+  /* ───────── 아임웹 입력폼 디자인 ───────── */
+  .form-widget{max-width:none!important;margin:0!important;
+    background:#fff!important;border-radius:14px!important;padding:30px 28px 28px!important;
+    box-shadow:0 22px 54px rgba(17,24,47,.3);font-family:var(--sans)!important;text-align:left!important}
+  .form-widget .form-group{margin-bottom:17px!important}
+  .form-widget .control-label{display:block!important;font-size:13.5px!important;font-weight:700!important;
+    color:var(--ink-2)!important;margin-bottom:8px!important;letter-spacing:-.01em}
+  .form-widget .icon-required{color:var(--danger)!important;margin-left:4px;font-style:normal}
+
+  .form-widget .form-control{width:100%!important;height:50px!important;
+    border:1px solid var(--line-2)!important;border-radius:9px!important;
+    padding:0 15px!important;font-size:15.5px!important;font-family:var(--sans)!important;
+    background:#fff!important;color:var(--ink)!important;box-shadow:none!important;
+    transition:border-color .16s,box-shadow .16s}
+  .form-widget .form-control:focus{border-color:var(--navy)!important;outline:none!important;
+    box-shadow:0 0 0 3px rgba(58,91,168,.13)!important}
+  .form-widget .form-control::placeholder{color:#B3B9CC}
+
+  .form-widget .phonenumber_wrap{display:flex!important;align-items:center;gap:8px;
+    width:100%!important;max-width:100%!important}
+  .form-widget .phonenumber_wrap .form-control,
+  .form-widget .phonenumber_wrap input.inline-blocked{
+    flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;
+    text-align:center!important;display:block!important;margin:0!important}
+  .form-widget .phonenumber_wrap .line{color:var(--line-2);flex:0 0 auto;margin:0!important}
+
+  /* 업종 → 알약 버튼 */
+  .form-widget .radio.radio-styled{display:inline-block!important;margin:0 6px 7px 0!important;
+    padding:0!important;min-height:0!important}
+  .form-widget .radio-styled label{margin:0!important;padding:0!important;cursor:pointer;display:block}
+  .form-widget .radio-styled input[type="radio"]{position:absolute!important;opacity:0!important;
+    width:1px!important;height:1px!important;margin:0!important}
+  /* 아임웹이 붙이는 라디오 아이콘(가상요소)이 글자를 가리지 않도록 제거 */
+  .form-widget .radio-styled label::before,.form-widget .radio-styled label::after,
+  .form-widget .radio-styled span::before,.form-widget .radio-styled span::after{
+    content:none!important;display:none!important}
+  .form-widget .radio-styled input[type="radio"] + span{display:inline-block;
+    padding:9px 16px!important;margin:0!important;text-indent:0!important;
+    border:1px solid var(--line-2);border-radius:999px;font-size:13.5px;font-weight:700;
+    line-height:1.4;white-space:nowrap;overflow:visible;
+    color:var(--ink-2);background:#fff;transition:background-color .16s,border-color .16s,color .16s}
+  .form-widget .radio-styled input[type="radio"]:hover + span{border-color:var(--navy-300)}
+  .form-widget .radio-styled input[type="radio"]:checked + span{background:var(--navy);
+    border-color:var(--navy);color:#fff}
+
+  /* 지역 드롭다운 */
+  .form-widget .form-select-wrap{position:relative}
+  .form-widget select.form-control{appearance:none;-webkit-appearance:none;padding-right:42px!important;cursor:pointer}
+  .form-widget .form-select-wrap::after{content:"";position:absolute;right:17px;top:20px;
+    width:9px;height:9px;border-right:2px solid var(--navy-500);border-bottom:2px solid var(--navy-500);
+    transform:rotate(45deg);pointer-events:none}
+
+  /* 동의 약관 박스 (아임웹은 div 로 그립니다) — 작게, 세로 스크롤만 */
+  .form-widget .form-group.privacy .form-control,
+  .form-widget .form-group.privacy div.form-control,
+  .form-widget #privacy .form-control,
+  .form-widget textarea.form-control{
+    height:74px!important;min-height:74px!important;max-height:74px!important;
+    padding:10px 13px!important;font-size:12px!important;line-height:1.7!important;
+    color:var(--ink-2)!important;background:var(--navy-50)!important;
+    border:1px solid var(--line)!important;border-radius:8px!important;
+    overflow-y:auto!important;overflow-x:hidden!important;resize:none!important;
+    white-space:normal!important;word-break:keep-all;overflow-wrap:anywhere}
+  /* 가로 스크롤을 만드는 요소들 차단 */
+  .form-widget .form-group.privacy .form-control *{
+    max-width:100%!important;white-space:normal!important;word-break:keep-all;overflow-wrap:anywhere}
+  .form-widget .form-group.privacy .form-control br{display:block;content:"";margin-top:2px}
+  .form-widget .form-group.privacy{margin-bottom:14px!important}
+  .form-widget .form-group.privacy .control-label{font-size:13px!important;margin-bottom:6px!important}
+  /* 스크롤바 얇게 */
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar{width:6px;height:0}
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar-thumb{
+    background:var(--line-2);border-radius:3px}
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar-track{background:transparent}
+
+  /* 동의 체크박스 — 아임웹이 그리는 네모(가상요소)는 끄고 진짜 체크박스를 보여줍니다 */
+  .form-widget .checkbox-styled label::before,.form-widget .checkbox-styled label::after,
+  .form-widget .checkbox-styled span::before,.form-widget .checkbox-styled span::after{
+    content:none!important;display:none!important}
+  .form-widget .checkbox,.form-widget .checkbox.checkbox-styled{
+    margin:10px 0 0!important;padding:0!important;min-height:0!important;display:block!important}
+  .form-widget .checkbox-styled label{display:flex!important;align-items:flex-start;gap:9px;
+    margin:0!important;padding:0!important;cursor:pointer;width:100%}
+  .form-widget .checkbox-styled input[type="checkbox"],
+  .form-widget .checkbox-styled input._checkbox{
+    appearance:auto!important;-webkit-appearance:checkbox!important;
+    display:inline-block!important;visibility:visible!important;opacity:1!important;
+    position:static!important;left:auto!important;top:auto!important;
+    transform:none!important;clip:auto!important;clip-path:none!important;
+    width:18px!important;height:18px!important;min-width:18px!important;
+    margin:1px 0 0!important;padding:0!important;border:0!important;
+    flex:0 0 auto!important;accent-color:var(--navy);cursor:pointer;
+    pointer-events:auto!important;z-index:1}
+  .form-widget .checkbox-styled span{display:inline-block!important;font-size:13.5px!important;
+    line-height:1.6!important;color:var(--ink)!important;font-weight:700!important;
+    margin:0!important;padding:0!important;border:0!important;background:none!important;
+    text-indent:0!important;overflow:visible!important;white-space:normal!important}
+
+  /* 제출 버튼 */
+  .form-widget .btn-primary,.form-widget ._input_form_submit{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    border:1.5px solid var(--gold)!important;color:var(--navy)!important;
+    height:54px!important;border-radius:9px!important;width:100%!important;
+    font-family:var(--sans)!important;font-size:16px!important;font-weight:800!important;
+    letter-spacing:-.01em;text-decoration:none!important;
+    box-shadow:0 10px 26px rgba(252,208,101,.3)!important;transition:background-color .16s}
+  .form-widget .btn-primary:hover,.form-widget ._input_form_submit:hover{
+    background-color:#EFBB3F!important;text-decoration:none!important}
+  .form-widget .text-center{margin-top:4px}
+  .form-widget .form-group a{color:var(--navy)!important;text-decoration:underline;text-underline-offset:2px}
+
+  @media (max-width:900px){
+    .vbapply{grid-template-columns:1fr;grid-template-rows:auto auto auto;
+      grid-template-areas:"cta" "form" "cont";row-gap:28px;column-gap:0}
+    .vbcta{text-align:center}
+    .vbcta .eyebrow{justify-content:center}
+    .vbcontact{text-align:center;margin-top:0;padding-top:22px}
+    .form-widget{padding:24px 20px 22px!important;border-radius:12px!important}
+    .form-widget .form-control{height:48px!important;font-size:15px!important}
+    .form-widget .radio-styled input[type="radio"] + span{padding:8px 13px;font-size:13px}
+  }
+
+  /* ── 동의 영역 ── */
+  .vbw-agall{display:flex!important;align-items:center;gap:12px;margin:10px 0 16px;
+    padding:13px 16px;background:#3A5BA8;border:0;border-radius:9px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(58,91,168,.22)}
+  .vbw-agall input{width:21px!important;height:21px!important;margin:0!important;flex:none;
+    accent-color:#FCD065;cursor:pointer;opacity:1!important;position:static!important;
+    appearance:auto!important;-webkit-appearance:checkbox!important;clip:auto!important;transform:none!important}
+  .vbw-agall b{font-size:15.5px!important;font-weight:800!important;color:#fff!important;
+    letter-spacing:-.02em;line-height:1.45;display:block}
+  /* 확인창을 건너뛰는 동안에는 그 창이 눈에 보이지 않게 합니다 */
+  html.vb-skipconfirm [id^="input_form_complete_modal"],
+  html.vb-skipconfirm .modal-backdrop{opacity:0!important;pointer-events:none!important;
+    transition:none!important}
+  .vbw-policybtn{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:5px;
+    cursor:pointer;font-size:12px;font-weight:700;color:#5D7CC4;background:#F2F6FC;
+    border:1px solid #CBD5EA;border-radius:999px;padding:5px 12px;line-height:1;
+    transition:background-color .18s ease,border-color .18s ease}
+  .vbw-policybtn:hover{background:#DFE8F7;border-color:#9BB3DF}
+</style>
+
+<div class="vbapply" id="apply">
+  <div class="vbcta">
+    <div class="eyebrow">Contact</div>
+    <h2><b>가능한지부터</b><br>확인해 보세요.</h2>
+    <span class="free"><b>가능 여부 진단</b>, 첫 상담은 무료입니다</span>
+    <p class="cp">지금 해당되는 정책자금, 지원사업, 기업인증이 궁금하다면 바로 신청하세요.</p>
+  </div>
+  <!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 무료 진단 신청 폼 (깃허브 페이지스용)
+
+     이 조각은 `14_신청안내+폼디자인.html` 안의
+         <div id="vbFormSlot"></div>
+     자리에 그대로 넣습니다. 디자인 CSS 는 그 위젯에 이미 들어 있습니다.
+
+     ▣ 보내는 곳은 **이미 쓰고 계신 접수기**입니다.
+        대행사 랜딩(route=hanjungbon) 과 같은 웹앱에, route 만 다르게 보냅니다.
+            route=homepage  →  「DB 입력」 H열 유입경로 = 홈페이지
+
+        그래서 차단번호 · 같은 날 같은 번호 · 홈페이지 30일 재신청 거르기 ·
+        텔레그램 알림 · 「접수기록」 기록이 **다른 경로와 똑같이** 적용됩니다.
+
+     ▣ 고칠 곳은 아래 ENDPOINT 한 줄뿐입니다. (기존 배포 주소 그대로)
+     ══════════════════════════════════════════════════════════════ -->
+<div class="form-widget" id="vbApplyForm">
+  <h3 class="vbf-title">무료 진단 신청</h3>
+  <p class="vbf-lead">성함과 연락처만 주셔도 됩니다. 1분이면 끝납니다.</p>
+
+  <form id="vbf" method="post" accept-charset="utf-8" novalidate>
+
+    <!-- 봇 거르기 — 사람 눈에는 안 보입니다. 채워져 있으면 보내지 않습니다 -->
+    <div class="vbf-hp" aria-hidden="true">
+      <label>회사 주소<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-name">성함<i class="icon-required">*</i></label>
+      <input class="form-control" type="text" id="vbf-name" name="name"
+             placeholder="예) 홍길동" required autocomplete="name" maxlength="30">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-tel1">연락처<i class="icon-required">*</i></label>
+      <div class="phonenumber_wrap">
+        <input class="form-control" type="tel" id="vbf-tel1" value="010"
+               inputmode="numeric" maxlength="3" required aria-label="연락처 앞자리">
+        <span class="line">–</span>
+        <input class="form-control" type="tel" id="vbf-tel2"
+               inputmode="numeric" maxlength="4" required aria-label="연락처 가운데자리">
+        <span class="line">–</span>
+        <input class="form-control" type="tel" id="vbf-tel3"
+               inputmode="numeric" maxlength="4" required aria-label="연락처 뒷자리">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-biz">사업자명</label>
+      <input class="form-control" type="text" id="vbf-biz" name="bizName"
+             placeholder="예) 윤파트너스" autocomplete="organization" maxlength="40">
+    </div>
+
+    <!-- ▣ 업종 — 「DB 입력」 E열. 값은 다른 경로(레베이스·메타)와 **글자까지 같아야** 합니다 -->
+    <div class="form-group">
+      <span class="control-label">업종</span>
+      <div class="vbf-pills">
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="도소매업"><span>도소매업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="제조업"><span>제조업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="건설업"><span>건설업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="운수·물류"><span>운수·물류</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="음식·숙박업"><span>음식·숙박업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="통신판매업"><span>통신판매업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="IT·정보서비스"><span>IT·정보서비스</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="기타 서비스업"><span>기타 서비스업</span></label></div>
+      </div>
+    </div>
+
+    <!-- ▣ 매출 — 「DB 입력」 F열(2025 매출). 광고 폼의 선택지와 맞춰야 합니다 -->
+    <div class="form-group">
+      <span class="control-label">연 매출</span>
+      <div class="vbf-pills">
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="1억 미만"><span>1억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="1억 ~ 3억 미만"><span>1억 ~ 3억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="3억 ~ 5억 미만"><span>3억 ~ 5억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="5억 ~ 10억 미만"><span>5억 ~ 10억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="10억 이상"><span>10억 이상</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-region">사업장 소재지</label>
+      <div class="form-select-wrap">
+        <select class="form-control" id="vbf-region" name="region">
+          <option value="">선택해 주세요</option>
+          <option>서울</option><option>부산</option><option>대구</option><option>인천</option>
+          <option>광주</option><option>대전</option><option>울산</option><option>세종</option>
+          <option>경기</option><option>강원</option><option>충북</option><option>충남</option>
+          <option>전북</option><option>전남</option><option>경북</option><option>경남</option>
+          <option>제주</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group privacy">
+      <span class="control-label">개인정보 수집·이용 동의</span>
+      <div class="form-control" tabindex="0" role="region" aria-label="개인정보 수집·이용 안내">
+        <b>수집 항목</b> 성함 · 연락처(필수), 사업자명 · 업종 · 연 매출 · 사업장 소재지(선택)<br>
+        <b>이용 목적</b> 상담 신청 접수 및 가능 여부 진단 안내<br>
+        <b>보유 기간</b> 수집일로부터 3년 또는 동의 철회 시까지<br>
+        <b>거부 권리</b> 동의를 거부하실 수 있으나, 필수 항목에 동의하지 않으시면 상담 신청이 접수되지 않습니다<br>
+        <b>안내 발송</b> 접수되면 입력하신 번호로 접수 확인 알림톡이 발송됩니다
+      </div>
+    </div>
+
+    <div class="checkbox checkbox-styled vbf-all">
+      <label><input type="checkbox" id="vbf-all"><span>전체 동의</span></label>
+    </div>
+    <div class="checkbox checkbox-styled">
+      <label><input type="checkbox" id="vbf-agree1" required><span>[필수] 개인정보 수집·이용에 동의합니다. <a href="/개인정보처리방침.html" target="_blank" rel="noopener">전문 보기</a></span></label>
+    </div>
+    <div class="checkbox checkbox-styled">
+      <label><input type="checkbox" id="vbf-agree2"><span>[선택] 마케팅·광고 활용에 동의합니다.</span></label>
+    </div>
+
+    <p class="vbf-msg" id="vbf-msg" role="status" aria-live="polite" hidden></p>
+
+    <div class="form-group vbf-submit">
+      <button type="submit" class="btn-primary" id="vbf-btn">무료 진단 신청</button>
+    </div>
+    <p class="text-center vbf-after">접수 확인 후 담당자가 가장 빠른 시간에 연락드립니다.</p>
+  </form>
+</div>
+
+<iframe name="vbf_sink" id="vbf_sink" title="신청 처리" style="display:none;width:0;height:0;border:0"></iframe>
+
+<style>
+  /* 위젯 14 의 폼 CSS 가 대부분을 맡습니다. 여기엔 그 CSS 에 없는 것만 둡니다. */
+  #vbApplyForm .vbf-title{margin:0 0 6px;font-family:var(--display);font-weight:900;
+    font-size:21px;letter-spacing:-.025em;color:var(--ink)}
+  #vbApplyForm .vbf-lead{margin:0 0 20px;font-size:13.5px;color:var(--muted);line-height:1.7}
+  #vbApplyForm .vbf-pills{display:flex;flex-wrap:wrap;gap:0}
+  #vbApplyForm .vbf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  #vbApplyForm .vbf-all{margin-bottom:2px!important;padding-bottom:9px!important;
+    border-bottom:1px solid var(--line)}
+  #vbApplyForm .vbf-submit{margin:18px 0 0!important}
+  #vbApplyForm .vbf-after{margin:10px 0 0;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.6}
+  #vbApplyForm .vbf-msg{margin:14px 0 0;padding:11px 13px;border-radius:8px;
+    font-size:13.5px;font-weight:700;line-height:1.6;word-break:keep-all}
+  #vbApplyForm .vbf-msg.err{background:#FDEDEC;color:#9C2B20;border:1px solid #F3C9C4}
+  #vbApplyForm .form-control[aria-invalid="true"]{border-color:#C0392B!important;
+    box-shadow:0 0 0 3px rgba(192,57,43,.12)!important}
+  #vbApplyForm button[disabled]{opacity:.6;cursor:progress}
+  #vbApplyForm .vbf-done{text-align:center;padding:26px 6px 20px}
+  #vbApplyForm .vbf-done b{display:block;font-family:var(--display);font-weight:900;
+    font-size:20px;color:var(--navy-900);letter-spacing:-.02em;margin-bottom:9px}
+  #vbApplyForm .vbf-done p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.8}
+</style>
+
+<script>
+(function () {
+  /* ▣ 여기만 고치세요 ─────────────────────────────────────────
+     기존 접수기의 배포 주소입니다. (대행사 랜딩이 쓰는 것과 같은 주소)
+     Apps Script → 배포 → 배포 관리 에서 확인할 수 있습니다. */
+  var ENDPOINT = 'PASTE_EXISTING_EXEC_URL_HERE';
+  var ROUTE    = 'homepage';   /* 접수기 ROUTES 에 추가해야 하는 값 → 유입경로 "홈페이지" */
+  /* ───────────────────────────────────────────────────────── */
+
+  var form = document.getElementById('vbf');
+  if (!form) return;
+  var box  = document.getElementById('vbApplyForm');
+  var btn  = document.getElementById('vbf-btn');
+  var msg  = document.getElementById('vbf-msg');
+  var sink = document.getElementById('vbf_sink');
+
+  var all = document.getElementById('vbf-all');
+  var a1  = document.getElementById('vbf-agree1');
+  var a2  = document.getElementById('vbf-agree2');
+
+  /* 전체 동의 ↔ 개별 동의 */
+  all.addEventListener('change', function () { a1.checked = a2.checked = all.checked; });
+  [a1, a2].forEach(function (c) {
+    c.addEventListener('change', function () { all.checked = a1.checked && a2.checked; });
+  });
+
+  /* 연락처 — 숫자만, 다 채우면 다음 칸으로 */
+  var tels = ['vbf-tel1', 'vbf-tel2', 'vbf-tel3'].map(function (id) { return document.getElementById(id); });
+  tels.forEach(function (el, i) {
+    el.addEventListener('input', function () {
+      el.value = el.value.replace(/[^0-9]/g, '');
+      if (el.value.length >= el.maxLength && tels[i + 1]) tels[i + 1].focus();
+    });
+  });
+
+  function phone() { return tels.map(function (t) { return t.value.trim(); }).join('-'); }
+
+  function say(text) {
+    msg.textContent = text;
+    msg.className = 'vbf-msg err';
+    msg.hidden = false;
+  }
+  function bad(el, text) {
+    el.setAttribute('aria-invalid', 'true');
+    el.focus();
+    say(text);
+    return false;
+  }
+  function check() {
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    var name = document.getElementById('vbf-name');
+    if (!name.value.trim()) return bad(name, '성함을 입력해 주세요.');
+    var d = tels.map(function (t) { return t.value.trim(); });
+    if (d[0].length < 2 || d[1].length < 3 || d[2].length < 4) {
+      return bad(tels[d[0].length < 2 ? 0 : (d[1].length < 3 ? 1 : 2)], '연락처를 끝까지 입력해 주세요.');
+    }
+    if (!a1.checked) { say('개인정보 수집·이용에 동의해 주셔야 접수됩니다.'); a1.focus(); return false; }
+    return true;
+  }
+
+  /* 같은 건을 두 번 보내도 접수기가 거르도록 하는 열쇠 — 분 단위라 재시도는 한 건으로 묶입니다 */
+  function dedupeId() {
+    var d = new Date(), p = function (n) { return ('0' + n).slice(-2); };
+    return 'web-' + phone().replace(/[^0-9]/g, '') + '-' +
+           d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + p(d.getHours()) + p(d.getMinutes());
+  }
+
+  function done() {
+    box.innerHTML =
+      '<div class="vbf-done"><b>신청이 접수되었습니다.</b>' +
+      '<p>담당자가 영업일 기준 하루 안에 연락드립니다.<br>' +
+      '급하신 경우 대표번호로 바로 전화 주셔도 됩니다.</p></div>';
+  }
+
+  var sent = false, timer = null;
+
+  sink.addEventListener('load', function () {
+    if (!sent) return;              /* 첫 로드(빈 iframe)는 무시합니다 */
+    clearTimeout(timer);
+    done();
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (sent) return;
+    if (!check()) return;
+    if (form.website.value) return;                       /* 봇 */
+
+    if (ENDPOINT.indexOf('http') !== 0) {
+      say('아직 접수 주소가 연결되지 않았습니다. 대표번호로 전화 주세요.');
+      return;
+    }
+
+    /* 접수기(doPost)가 읽는 이름 그대로 보냅니다 */
+    var payload = {
+      route:      ROUTE,
+      name:       document.getElementById('vbf-name').value.trim(),
+      phone:      phone(),
+      bizName:    document.getElementById('vbf-biz').value.trim(),
+      industry:   (form.querySelector('input[name="industry"]:checked') || {}).value || '',
+      revenue:    (form.querySelector('input[name="revenue"]:checked') || {}).value || '',
+      region:     document.getElementById('vbf-region').value,
+      dedupeId:   dedupeId(),
+      agree:      'Y',
+      agreeThird: a1.checked ? 'Y' : 'N',
+      agreeSale:  a2.checked ? 'Y' : 'N',
+      pageUrl:    location.href,
+      referrer:   document.referrer || '홈페이지'
+    };
+
+    /* iframe 으로 보냅니다 — 교차출처 제약을 타지 않는 가장 확실한 방법입니다 */
+    var post = document.createElement('form');
+    post.method = 'post';
+    post.action = ENDPOINT;
+    post.target = 'vbf_sink';
+    post.acceptCharset = 'utf-8';
+    post.style.display = 'none';
+    Object.keys(payload).forEach(function (k) {
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = payload[k];
+      post.appendChild(i);
+    });
+    document.body.appendChild(post);
+
+    sent = true;
+    btn.disabled = true;
+    btn.textContent = '보내는 중…';
+    post.submit();
+
+    /* 응답을 못 읽는 경우를 대비한 안전장치 — 12초 뒤에도 조용하면 완료로 봅니다 */
+    timer = setTimeout(done, 12000);
+  });
+})();
+</script>
+
+  <div class="vbcontact">
+    <span><b>[대표번호]</b>평일 09:30 – 17:30 · 점심 11:30 – 12:30</span>
+    <span>[주소], [상세주소]</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  function move() {
+    var slot = document.getElementById('vbFormSlot');
+    if (!slot || slot.children.length) return true;
+    var form = document.querySelector('.form-widget');
+    if (!form) return false;
+
+    var sec = form.closest('[doz_type="section"]');
+    var box = form.closest('[doz_type="widget"]');
+    slot.appendChild(form);                       // 폼을 오른쪽 칸으로
+
+    // 같은 섹션 안에 있으면 섹션을 숨기면 안 됩니다 (안내 문구까지 사라짐)
+    var mySec = slot.closest('[doz_type="section"]');
+    if (sec && sec !== mySec) {
+      sec.style.display = 'none';                 // 폼만 있던 섹션은 숨김
+    } else if (box) {
+      box.style.display = 'none';                 // 같은 섹션이면 빈 위젯만 숨김
+    }
+    return true;
+  }
+
+  /* ── 동의 영역 정리 ──
+     1) 필수(개인정보)를 선택(마케팅) 위로
+     2) 폼 안의 긴 약관 상자를 감추고 "전문 보기" 로 팝업을 띄웁니다
+     3) 이용자가 직접 누르는 "모두 동의" 칸 추가
+        (필수에 선택을 몰래 묶으면 개인정보보호법에 어긋납니다) */
+  function agreeAll() {
+    if (document.querySelector('.vbw-agall')) return true;
+    var groups = [].slice.call(document.querySelectorAll('.form-group'))
+      .filter(function (g) { return g.querySelector('input[type=checkbox]'); });
+    if (groups.length < 2) return false;
+
+    var priv = groups.filter(function (g) { return /privacy/.test(g.className); })[0];
+    var opt  = groups.filter(function (g) { return !/privacy/.test(g.className); })[0];
+    if (!priv || !opt) return false;
+
+    /* 1) 순서 : 필수 → 선택 */
+    if (priv.compareDocumentPosition(opt) & Node.DOCUMENT_POSITION_PRECEDING) {
+      opt.parentNode.insertBefore(priv, opt);
+    }
+
+    /* 2) 약관 상자 → 전문 보기 버튼 */
+    var terms = priv.querySelector('.form-control');
+    var label = priv.querySelector('.control-label');
+    if (terms && label && window.SITE && typeof SITE.openPrivacy === 'function') {
+      terms.style.setProperty('display', 'none', 'important');
+      label.style.setProperty('display', 'flex', 'important');
+      label.style.setProperty('align-items', 'center', 'important');
+      label.style.setProperty('justify-content', 'flex-start', 'important');
+      label.style.setProperty('gap', '6px', 'important');
+      label.style.setProperty('width', '100%', 'important');
+      var pb = document.createElement('button');
+      pb.type = 'button';
+      pb.className = 'vbw-policybtn';
+      pb.textContent = '전문 보기 ↗';
+      label.appendChild(pb);
+      pb.addEventListener('click', function (ev) {
+        ev.preventDefault(); ev.stopPropagation();
+        SITE.openPrivacy();
+      });
+    }
+
+    /* 3) 모두 동의 */
+    var boxes = [].slice.call(document.querySelectorAll('.form-group input[type=checkbox]'));
+    var lab = document.createElement('label');
+    lab.className = 'vbw-agall';
+    lab.innerHTML = '<input type="checkbox"><b>아래 내용에 모두 동의합니다</b>';
+    priv.parentNode.insertBefore(lab, priv);
+
+    var all = lab.querySelector('input'), lock = false;
+    all.addEventListener('change', function () {
+      lock = true;
+      boxes.forEach(function (c) {
+        if (c.checked !== all.checked) {
+          c.checked = all.checked;
+          c.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+      lock = false;
+    });
+    boxes.forEach(function (c) {
+      c.addEventListener('change', function () {
+        if (lock) return;
+        all.checked = boxes.every(function (x) { return x.checked; });
+      });
+    });
+    return true;
+  }
+
+  /* ── "입력하신 내용으로 접수할까요?" 확인창 건너뛰기 ──
+     신청 버튼을 이미 눌렀는데 한 번 더 묻는 단계라 이탈이 생깁니다.
+     버튼을 누른 순간부터 그 창을 보이지 않게 가려 두고, 뜨자마자 확인을 누릅니다.
+     (다른 상황에서 뜨는 창은 건드리지 않습니다) */
+  (function skipConfirm() {
+    var root = document.documentElement;
+    var armed = 0, timer = null;
+
+    function disarm() {
+      armed = 0;
+      root.classList.remove('vb-skipconfirm');
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+    function tryConfirm() {
+      if (!armed) return;
+      var m = document.querySelector('[id^="input_form_complete_modal"]');
+      if (!m) return;
+      if (m.getBoundingClientRect().height < 10) return;
+      var ok = m.querySelector('a.btn.right');
+      if (!ok) return;
+      ok.click();
+      setTimeout(disarm, 120);
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest &&
+        e.target.closest('.form-widget .btn-primary, .form-widget a.btn');
+      if (!a || /취소/.test(a.textContent || '')) return;
+      armed = Date.now();
+      root.classList.add('vb-skipconfirm');
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(disarm, 6000);     // 창이 안 뜨면 원래대로
+      tryConfirm();
+    }, true);
+
+    var m0 = document.querySelector('[id^="input_form_complete_modal"]');
+    if (m0 && window.MutationObserver) {
+      new MutationObserver(tryConfirm).observe(m0, { attributes: true });
+    }
+    setInterval(tryConfirm, 60);            // 관찰이 늦을 때를 위한 보조
+  })();
+
+  function run() { var a = move(); var b = agreeAll(); return a && b; }
+  if (!run()) {
+    var n = 0;
+    var t = setInterval(function () { if (run() || ++n > 60) clearInterval(t); }, 150);
+  }
+})();
+</script>
+
+</div>
+</section>
+<div class="vbsec"><!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 첫 방문 주의 안내 팝업
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     모든 페이지 공통 — 아임웹 '전체 적용' 코드 영역(또는 푸터 스크립트)에 한 번만
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .pop{position:fixed;inset:0;z-index:20000!important;display:flex;align-items:center;justify-content:center;
+    padding:20px;background:rgba(19,27,52,.62);backdrop-filter:blur(3px);
+    opacity:0;transition:opacity .25s ease}
+  .vbw .pop.on{opacity:1}
+  .vb-pop-anchor{display:block;width:100%;height:0;overflow:hidden}
+  .vbw .pop{display:none}
+  .vbw .pop.open{display:flex}
+  .vbw .popbox{position:relative;width:100%;max-width:470px;max-height:calc(100vh - 40px);overflow:auto;
+    background:#fff;border-top:5px solid var(--gold);border-radius:4px 4px 16px 16px;
+    box-shadow:0 34px 80px rgba(19,27,52,.42);
+    transform:translateY(16px);transition:transform .3s cubic-bezier(.2,.8,.3,1)}
+  .vbw .pop.on .popbox{transform:none}
+  .vbw .popx{position:absolute;top:14px;right:14px;width:34px;height:34px;border:0;border-radius:9px;
+    background:transparent;color:var(--muted);font-size:17px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:background-color .16s,color .16s}
+  .vbw .popx:hover{background:var(--navy-50);color:var(--navy)}
+  .vbw .poptop{padding:26px 26px 22px}
+  .vbw .pchip{display:inline-block;background:var(--gold-100);border:1px solid var(--gold);color:var(--gold-800);
+    font-size:11.5px;font-weight:800;letter-spacing:.14em;padding:4px 12px;border-radius:999px}
+  .vbw .poptop h2{margin:14px 0 0;font-size:22px;line-height:1.42;color:var(--navy);letter-spacing:-.025em}
+  .vbw .poptop p{margin:13px 0 0;font-size:13.5px;line-height:1.8;color:var(--ink-2)}
+  .vbw .popwarn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--navy-50);padding:20px 26px}
+  .vbw .popwarn .wt{font-size:13.5px;font-weight:800;color:var(--danger,#B4341F);margin-bottom:14px;
+    display:flex;align-items:center;gap:7px}
+  .vbw .popwarn .wt::before{content:"";width:16px;height:2px;background:var(--danger,#B4341F)}
+  .vbw .popwarn ol{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .vbw .popwarn li{display:flex;gap:12px;align-items:flex-start}
+  .vbw .popwarn .no{flex:none;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--navy-300);
+    padding-top:2px;letter-spacing:.02em}
+  .vbw .popwarn .tx{display:block}
+  .vbw .popwarn .tx b{display:block;font-size:14px;font-weight:800;color:var(--ink);line-height:1.5}
+  .vbw .popwarn .tx em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:2px}
+  .vbw .poptel{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding:18px 26px;background:#fff}
+  .vbw .poptel .tl{font-size:13px;color:var(--ink-2);line-height:1.6}
+  .vbw .poptel a{font-family:var(--display);font-weight:900;font-size:24px;color:var(--navy);
+    letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--gold);padding-bottom:2px}
+  .vbw .poptel a:hover{color:var(--navy-700)}
+  .vbw .popfoot{display:flex;gap:10px;padding:0 26px 24px}
+  .vbw .popfoot button{flex:1;border-radius:9px;font-family:var(--sans);font-size:14px;cursor:pointer;
+    min-height:50px;padding:0 10px;transition:background-color .16s,color .16s,border-color .16s}
+  .vbw .popfoot #popDay{flex:0 1 44%;background:#fff;border:1px solid var(--line-2);color:var(--muted)}
+  .vbw .popfoot #popDay:hover{border-color:var(--navy-300);color:var(--navy)}
+  .vbw .popfoot .prim{background:var(--navy);border:1px solid var(--navy);color:#fff;font-weight:700}
+  .vbw .popfoot .prim:hover{background:var(--navy-700)}
+  @media (max-width:440px){
+    .vbw .pop{padding:14px}
+    .vbw .poptop{padding:22px 19px 18px}
+    .vbw .poptop h2{font-size:19.5px}
+    .vbw .popwarn{padding:18px 19px}
+    .vbw .poptel{padding:16px 19px;gap:8px}
+    .vbw .poptel a{font-size:22px}
+    .vbw .popfoot{padding:0 19px 20px;gap:8px}
+    .vbw .popfoot button{font-size:13.5px;min-height:48px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .vbw .pop, .vbw .popbox{transition:none}
+    .vbw .popbox{transform:none}
+  }
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+
+  /* ── 아임웹 기본 팝업(유사기업 주의) 숨기기 ──
+     관리자에서 그 팝업을 끄셨다면 이 두 줄은 지우셔도 됩니다.
+     못 찾으셨다면 그대로 두세요. 이 줄이 대신 가려 줍니다. */
+  .popup-banner-wrap{display:none!important}
+</style>
+
+<div class="vbw">
+<div class="vb-pop-anchor" aria-hidden="true"></div>
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTitle">
+  <div class="popbox">
+    <button class="popx" type="button" id="popX" aria-label="닫기">&#10005;</button>
+
+    <div class="poptop">
+      <span class="pchip">주의 안내</span>
+      <h2 id="popTitle">정책자금을 미끼로 한<br><b>제3자 부당개입</b>에 주의하세요</h2>
+      <p>윤파트너스는 소상공인과 소기업의 자금과 인증을 다루는 경영컨설팅 기업입니다.<br>대표님께서 안심하고 상담받으실 수 있도록 먼저 알려드립니다.</p>
+    </div>
+
+    <div class="popwarn">
+      <div class="wt">이런 제안을 받으셨다면 멈추십시오</div>
+      <ol>
+          <li>
+            <span class="no">01</span>
+            <span class="tx"><b>정부기관 · 공무원 사칭</b><em>기관 직원이라며 접근하거나 소속을 모호하게 말하는 경우</em></span>
+          </li>
+          <li>
+            <span class="no">02</span>
+            <span class="tx"><b>서류 조작 · 매출 부풀리기</b><em>재무자료를 실제와 다르게 꾸며 신청하자는 제안</em></span>
+          </li>
+          <li>
+            <span class="no">03</span>
+            <span class="tx"><b>자금 실행 보장 약속</b><em>심사 전에 승인이나 한도를 확정적으로 약속하는 말</em></span>
+          </li>
+          <li>
+            <span class="no">04</span>
+            <span class="tx"><b>착수금 · 수수료 선요구</b><em>진행 전에 금액부터 입금하라고 요구하는 경우</em></span>
+          </li>
+          <li>
+            <span class="no">05</span>
+            <span class="tx"><b>보험 가입 등 끼워 넣기</b><em>자금 지원을 조건으로 다른 상품 가입을 유도하는 행위</em></span>
+          </li>
+      </ol>
+    </div>
+
+    <div class="poptel">
+      <div class="tl">위와 같은 일을 겪으셨다면 알려 주세요</div>
+      <a href="tel:15550934">[대표번호]</a>
+    </div>
+
+    <div class="popfoot">
+      <button type="button" id="popDay">오늘 하루 보지 않기</button>
+      <button type="button" class="prim" id="popClose">확인했습니다</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function () {
+var pop = document.getElementById('pop');
+    if (!pop) return;
+    var KEY = 'vb_notice_until';
+    var last = null;
+
+    function hidden() {
+      try {
+        var v = localStorage.getItem(KEY);
+        return v && Date.now() < parseInt(v, 10);
+      } catch (e) { return false; }
+    }
+    function open() {
+      last = document.activeElement;
+      pop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { pop.classList.add('on'); }, 20);
+      var x = document.getElementById('popX');
+      if (x) x.focus();
+    }
+    function close() {
+      pop.classList.remove('on');
+      document.body.style.overflow = '';
+      setTimeout(function () { pop.classList.remove('open'); }, 260);
+      if (last && last.focus) last.focus();
+    }
+    function hideToday() {
+      try {
+        var d = new Date(); d.setHours(24, 0, 0, 0);   // 오늘 자정까지
+        localStorage.setItem(KEY, String(d.getTime()));
+      } catch (e) {}
+      close();
+    }
+
+    document.getElementById('popX').addEventListener('click', close);
+    document.getElementById('popClose').addEventListener('click', close);
+    document.getElementById('popDay').addEventListener('click', hideToday);
+    pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && pop.classList.contains('open')) close();
+    });
+
+    if (!hidden()) setTimeout(open, 700);
+  })();
+
+  // ---------- 동의 체크박스 (전체 동의 연동) ----------
+  (function () {
+    var box = document.getElementById('agree');
+    if (!box) return;
+    var all = document.getElementById('agAll');
+    var items = box.querySelectorAll('.ag');
+    if (!all || !items.length) return;
+    function sync() {
+      var on = true;
+      Array.prototype.forEach.call(items, function (c) { if (!c.checked) on = false; });
+      all.checked = on;
+    }
+    all.addEventListener('change', function () {
+      Array.prototype.forEach.call(items, function (c) { c.checked = all.checked; });
+    });
+    Array.prototype.forEach.call(items, function (c) { c.addEventListener('change', sync); });
+
+    var det = box.querySelector('details'), wrap = box.querySelector('.dwrap');
+    if (det && wrap) {
+      det.addEventListener('toggle', function () { wrap.hidden = !det.open; });
+    }
+})();
+</script>
+</div>
+</main>
+
+<footer class="vb-ft">
+  <div class="vb-ft-in">
+    <img src="/images/1_브랜드/YOON_PARTNERS_white.png" alt="윤파트너스" width="519" height="160">
+    <p class="biz"><span>상호 <b>윤파트너스</b></span><span>대표 [대표자명]</span>
+      <span>사업자등록번호 [사업자등록번호]</span></p>
+    <p>[주소], [상세주소]</p>
+    <p>대표전화 <a href="tel:[대표번호]"><b>[대표번호]</b></a> · 이메일 [이메일]</p>
+    <p>개인정보관리책임자 [대표자명]</p>
+    <nav class="vb-ft-links" aria-label="약관">
+      <a href="/terms.html">이용약관</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+    <p class="copy">Copyright © 2026 윤파트너스. All rights reserved.</p>
+  </div>
+</footer>
+
+<nav class="vb-bar" aria-label="바로가기">
+  <a class="call" href="tel:[대표번호]">전화</a>
+  <!-- 카카오톡 채널 주소가 정해지면 아래 줄의 주석을 풀고 grid-template-columns 를 1fr 1fr 1.5fr 로 바꾸세요
+  <a class="call" href="[카카오톡채널주소]" target="_blank" rel="noopener">카카오톡</a> -->
+  <a class="apply" href="#apply">무료 진단 신청</a>
+</nav>
+
+<script>
+(function () {
+  var hd = document.getElementById('vbHd'), b = document.getElementById('vbBurger');
+  if (!hd || !b) return;
+  b.addEventListener('click', function () {
+    var open = hd.classList.toggle('vb-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  });
+  hd.querySelectorAll('.vb-nav a, .vb-hd-cta a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      hd.classList.remove('vb-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+</body>
+</html>

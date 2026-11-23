@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>페이지를 찾을 수 없습니다 — 윤파트너스</title>
+<meta name="description" content="소상공인·소기업 정책자금, 정부지원사업, 기업인증. 가능한지부터 무료로 확인해 드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="윤파트너스">
+<meta property="og:title" content="윤파트너스 — 대표님의 든든한 파트너">
+<meta property="og:description" content="소상공인·소기업 정책자금, 정부지원사업, 기업인증. 가능한지부터 무료로 확인해 드립니다.">
+<meta property="og:image" content="/images/1_브랜드/OG_공유이미지_1200x630.png">
+<link rel="icon" href="/images/1_브랜드/파비콘_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="vb-skip" href="#main">본문으로 건너뛰기</a>
+<header class="vb-hd" id="vbHd">
+  <div class="vb-hd-in">
+    <a class="vb-logo" href="/index.html"><img src="/images/1_브랜드/YOON_PARTNERS.png" alt="윤파트너스" width="519" height="160"></a>
+    <nav class="vb-nav" aria-label="주요 메뉴">
+      <a href="/index.html">홈</a>
+      <a href="/about.html">회사소개</a>
+      <a href="/funding.html">자금조달</a>
+      <a href="/scaleup.html">스케일업</a>
+      <a href="/certification.html">기업인증</a>
+    </nav>
+    <div class="vb-hd-cta">
+      <a class="vb-tel" href="tel:[대표번호]"><small>TEL</small>[대표번호]</a>
+      <a class="vb-hd-btn" href="#apply">무료 상담 신청</a>
+    </div>
+    <button class="vb-burger" type="button" id="vbBurger" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="vbsec" style="padding-top:110px;padding-bottom:120px"><div class="vbcontainer" style="text-align:center"><p style="font-family:var(--vb-display);font-weight:900;font-size:40px;color:var(--vb-navy-900);letter-spacing:-.03em;margin:0 0 14px">404</p><p style="color:var(--vb-ink-2);margin:0 0 28px">찾으시는 페이지가 없습니다.</p><a class="vb-hd-btn" href="/index.html">홈으로</a></div></section>
+</main>
+
+<footer class="vb-ft">
+  <div class="vb-ft-in">
+    <img src="/images/1_브랜드/YOON_PARTNERS_white.png" alt="윤파트너스" width="519" height="160">
+    <p class="biz"><span>상호 <b>윤파트너스</b></span><span>대표 [대표자명]</span>
+      <span>사업자등록번호 [사업자등록번호]</span></p>
+    <p>[주소], [상세주소]</p>
+    <p>대표전화 <a href="tel:[대표번호]"><b>[대표번호]</b></a> · 이메일 [이메일]</p>
+    <p>개인정보관리책임자 [대표자명]</p>
+    <nav class="vb-ft-links" aria-label="약관">
+      <a href="/terms.html">이용약관</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+    <p class="copy">Copyright © 2026 윤파트너스. All rights reserved.</p>
+  </div>
+</footer>
+
+<nav class="vb-bar" aria-label="바로가기">
+  <a class="call" href="tel:[대표번호]">전화</a>
+  <!-- 카카오톡 채널 주소가 정해지면 아래 줄의 주석을 풀고 grid-template-columns 를 1fr 1fr 1.5fr 로 바꾸세요
+  <a class="call" href="[카카오톡채널주소]" target="_blank" rel="noopener">카카오톡</a> -->
+  <a class="apply" href="#apply">무료 진단 신청</a>
+</nav>
+
+<script>
+(function () {
+  var hd = document.getElementById('vbHd'), b = document.getElementById('vbBurger');
+  if (!hd || !b) return;
+  b.addEventListener('click', function () {
+    var open = hd.classList.toggle('vb-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  });
+  hd.querySelectorAll('.vb-nav a, .vb-hd-cta a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      hd.classList.remove('vb-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+</body>
+</html>

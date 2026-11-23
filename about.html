@@ -1,0 +1,1900 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>회사소개 — 윤파트너스</title>
+<meta name="description" content="윤파트너스가 어떤 회사인지, 누가 일하는지, 어디에 있는지 알려드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="윤파트너스">
+<meta property="og:title" content="회사소개 — 윤파트너스">
+<meta property="og:description" content="윤파트너스가 어떤 회사인지, 누가 일하는지, 어디에 있는지 알려드립니다.">
+<meta property="og:image" content="/images/1_브랜드/OG_공유이미지_1200x630.png">
+<link rel="icon" href="/images/1_브랜드/파비콘_512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="vb-skip" href="#main">본문으로 건너뛰기</a>
+<header class="vb-hd" id="vbHd">
+  <div class="vb-hd-in">
+    <a class="vb-logo" href="/index.html"><img src="/images/1_브랜드/YOON_PARTNERS.png" alt="윤파트너스" width="519" height="160"></a>
+    <nav class="vb-nav" aria-label="주요 메뉴">
+      <a href="/index.html">홈</a>
+      <a href="/about.html" aria-current="page">회사소개</a>
+      <a href="/funding.html">자금조달</a>
+      <a href="/scaleup.html">스케일업</a>
+      <a href="/certification.html">기업인증</a>
+    </nav>
+    <div class="vb-hd-cta">
+      <a class="vb-tel" href="tel:[대표번호]"><small>TEL</small>[대표번호]</a>
+      <a class="vb-hd-btn" href="#apply">무료 상담 신청</a>
+    </div>
+    <button class="vb-burger" type="button" id="vbBurger" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="vbsec" doz_type="section">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 공통 보정 (모바일 여백 · 신청 바로가기 · 상단 디자인)
+     아임웹에는 모바일 전용 여백 설정이 없어서, 이 조각으로 대신합니다.
+     페이지마다 코드 위젯 하나에 한 번만 넣으면 그 페이지 전체에 적용됩니다.
+     ══════════════════════════════════════════════════════════════ -->
+<div class="vb-mobile-pad" aria-hidden="true"></div>
+<style>
+  .vb-mobile-pad{display:block;width:100%;height:0;overflow:hidden}
+</style>
+
+<script>
+/* ── 모바일에서 섹션 상하 여백을 비율로 줄입니다 ──
+   여백을 0 으로 둔 섹션(상단 띠 등)은 그대로 0 으로 둡니다. */
+(function () {
+  var MAP = null;
+  function read() {
+    MAP = [].slice.call(document.querySelectorAll('[doz_type="section"]')).map(function (s) {
+      if (s.dataset.vbpt === undefined) {
+        s.dataset.vbpt = String(parseFloat(s.style.paddingTop) || 0);
+        s.dataset.vbpb = String(parseFloat(s.style.paddingBottom) || 0);
+      }
+      return { el: s, t: +s.dataset.vbpt, b: +s.dataset.vbpb };
+    });
+  }
+  function apply() {
+    read();
+    var w = window.innerWidth;
+    var m = w <= 400 ? 0.58 : (w <= 767 ? 0.70 : 0);
+    MAP.forEach(function (o) {
+      if (!m) {
+        o.el.style.removeProperty('padding-top');
+        o.el.style.removeProperty('padding-bottom');
+        if (o.t) o.el.style.paddingTop = o.t + 'px';
+        if (o.b) o.el.style.paddingBottom = o.b + 'px';
+        return;
+      }
+      o.el.style.setProperty('padding-top', Math.round(o.t * m) + 'px', 'important');
+      o.el.style.setProperty('padding-bottom', Math.round(o.b * m) + 'px', 'important');
+    });
+  }
+  apply();
+  window.addEventListener('resize', apply);
+  window.addEventListener('load', apply);
+  setTimeout(apply, 500);
+  setTimeout(apply, 1500);
+})();
+</script>
+
+<script>
+/* ── 페이지 안의 "#apply" 링크를 신청 폼으로 보냅니다 ──
+   아임웹에는 앵커(#apply)가 없어서, 스크립트가 신청 섹션을 찾아 부드럽게 내려줍니다.
+   아임웹이 window.scrollTo 의 smooth 옵션을 무시하므로 직접 한 칸씩 움직입니다. */
+(function () {
+  function sectionOf(el) {
+    return el ? (el.closest('[doz_type="section"]') || el) : null;
+  }
+  function target(hash) {
+    if (hash === '#selfcheck') {
+      return sectionOf(document.getElementById('selfcheck')
+        || document.querySelector('.vbw .ck, .vbw .chk'));
+    }
+    return sectionOf(document.getElementById('vbFormSlot')
+      || document.querySelector('.form-widget'));
+  }
+  function glide(to) {
+    var from = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var dist = to - from;
+    if (Math.abs(dist) < 2) return;
+    var dur = Math.min(900, Math.max(360, Math.abs(dist) * 0.55));
+    var t0 = Date.now();
+    var timer = setInterval(function () {
+      var p = Math.min(1, (Date.now() - t0) / dur);
+      var e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+      window.scrollTo(0, Math.round(from + dist * e));
+      if (p >= 1) clearInterval(timer);
+    }, 16);
+  }
+  var HASH = { '#apply': 1, '#selfcheck': 1 };
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    if (h.charAt(0) !== '#' || !HASH[h]) return;
+    var t = target(h);
+    if (!t) return;
+    e.preventDefault();
+    var top = t.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0);
+    glide(Math.max(0, top - 80));
+  }, true);
+})();
+</script>
+
+<style>
+/* ══════ 상단(헤더) 디자인 — 초안에 맞춤 ══════
+   아임웹 기본 상단을 그대로 두고 모양만 입힙니다.
+   기본 헤더와 스크롤 시 따라오는 고정 헤더에 동시에 적용됩니다. */
+#doz_header_wrap{--vbn:#3A5BA8;--vbg:#FCD065;--vbi:#4D4643}
+
+@media (min-width:768px){
+  #inline_header_normal{height:78px!important}
+  #doz_header_wrap [data-widget-type="inline_logo"] img{width:190px!important;height:auto!important}
+  #inline_header_fixed [data-widget-type="inline_logo"] img{width:168px!important}
+}
+
+/* 메뉴 — 호버하면 골드 밑줄, 지금 보는 페이지는 네이비 밑줄 */
+#doz_header_wrap ._inline_menu_container li>a{
+  font-size:15.5px!important;font-weight:600!important;color:var(--vbi)!important;
+  padding:0 17px!important;position:relative!important;letter-spacing:-.012em!important}
+#doz_header_wrap ._inline_menu_container li>a::after{
+  content:"";position:absolute;left:17px;right:17px;bottom:5px;height:2px;
+  background:var(--vbg);transform:scaleX(0);transform-origin:left;
+  transition:transform .22s ease}
+#doz_header_wrap ._inline_menu_container li>a:hover{color:var(--vbn)!important}
+#doz_header_wrap ._inline_menu_container li>a:hover::after{transform:scaleX(1)}
+#doz_header_wrap ._inline_menu_container li.vb-on>a{color:var(--vbn)!important;font-weight:800!important}
+#doz_header_wrap ._inline_menu_container li.vb-on>a::after{background:var(--vbn);transform:scaleX(1)}
+
+/* 전화번호 + 무료상담 버튼 */
+#doz_header_wrap [data-widget-type="inline_button"]{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important}
+#doz_header_wrap a.vb-tel{
+  display:inline-flex!important;align-items:baseline!important;gap:6px!important;
+  font-weight:900!important;font-size:18.5px!important;color:var(--vbn)!important;
+  letter-spacing:-.02em!important;white-space:nowrap!important;background:none!important;
+  height:auto!important;padding:0!important;box-shadow:none!important;border:0!important}
+#doz_header_wrap a.vb-tel small{font-size:10.5px;font-weight:800;color:#9BB3DF;letter-spacing:.1em}
+#doz_header_wrap [data-widget-type="inline_button"] a:not(.vb-tel){
+  background:var(--vbg)!important;background-color:var(--vbg)!important;color:var(--vbn)!important;
+  border:0!important;border-radius:6px!important;height:42px!important;padding:0 20px!important;
+  font-size:14.5px!important;font-weight:800!important;display:inline-flex!important;
+  align-items:center!important;justify-content:center!important;letter-spacing:-.01em!important;
+  box-shadow:0 6px 16px rgba(252,208,101,.28)!important;
+  transition:background-color .18s ease,box-shadow .18s ease!important}
+#doz_header_wrap [data-widget-type="inline_button"] a:not(.vb-tel):hover{
+  background-color:#EFBB3F!important;box-shadow:0 8px 20px rgba(252,208,101,.38)!important}
+@media (max-width:1180px){#doz_header_wrap a.vb-tel{display:none!important}}
+</style>
+
+<script>
+/* ── 상단 보정 : 무료상담 버튼 링크 · 현재 메뉴 표시 · 전화번호 ──
+   기본 헤더와 고정 헤더를 한 번에 처리합니다.
+   아임웹에서 버튼 링크를 따로 고치지 않으셔도 됩니다. */
+(function () {
+  function fix() {
+    var hdr = document.getElementById('doz_header_wrap');
+    if (!hdr) return;
+
+    /* 1. 무료상담 버튼 → 신청 폼 */
+    var btns = hdr.querySelectorAll('[data-widget-type="inline_button"] a');
+    Array.prototype.forEach.call(btns, function (a) {
+      if (a.className && a.className.indexOf('vb-tel') > -1) return;
+      var t = (a.textContent || '').replace(/\s/g, '');
+      if (/상담|신청|문의/.test(t) && a.getAttribute('href') !== '#apply') {
+        a.setAttribute('href', '#apply');
+      }
+    });
+
+    /* 2. 지금 보는 페이지 메뉴에 표시 */
+    var path = location.pathname.replace(/\/+$/, '');
+    if (path === '') path = '/30';
+    var lis = hdr.querySelectorAll('._inline_menu_container li');
+    Array.prototype.forEach.call(lis, function (li) {
+      var a = li.querySelector('a');
+      if (!a) return;
+      var h = (a.getAttribute('href') || '').split('?')[0].replace(/#.*$/, '').replace(/\/+$/, '');
+      if (h && h === path) li.classList.add('vb-on');
+    });
+
+    /* 3. 버튼 왼쪽에 대표번호 */
+    var wraps = hdr.querySelectorAll('[data-widget-type="inline_button"]');
+    Array.prototype.forEach.call(wraps, function (w) {
+      if (w.querySelector('.vb-tel')) return;
+      var s = document.createElement('a');
+      s.className = 'vb-tel';
+      s.href = 'tel:[대표번호]';
+      s.innerHTML = '<small>TEL</small>[대표번호]';
+      w.insertBefore(s, w.firstChild);
+    });
+  }
+  fix();
+  window.addEventListener('load', fix);
+  setTimeout(fix, 600);
+  setTimeout(fix, 1800);
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 회사소개 — 상단 제목
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     회사소개 1 — 섹션 배경·여백 설정하지 마세요(여백 0). 코드가 직접 칠합니다
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .subhero{background:var(--navy-50);border-bottom:1px solid var(--line);padding:56px 0 60px}
+  .vbw .subhero h1{font-size:clamp(28px,4.4vw,44px);color:var(--navy);margin:14px 0 0;letter-spacing:-.02em}
+  .vbw .subhero p{margin-top:18px;font-size:16.5px;color:var(--ink-2);max-width:660px;line-height:1.78}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero{text-align:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .subhero p{margin-left:auto;margin-right:auto}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw section, .vbw .subhero{scroll-margin-top:calc(var(--hd) + 10px)}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .subhero{padding:38px 0 42px}
+    .vbw .sec-head{margin-bottom:28px}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+
+  /* ── 좌우 끝까지 꽉 차는 상단 띠 ── */
+  .vbw .subhero{width:100vw!important;max-width:100vw!important;
+    margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
+    padding:62px 24px 66px!important}
+  .vbw .subhero .wrap{max-width:1120px;margin:0 auto;padding:0;text-align:center}
+  .vbw .subhero p{margin-left:auto;margin-right:auto}
+  @media (max-width:720px){
+    .vbw .subhero{padding:44px 20px 46px!important}
+  }
+</style>
+
+<div class="vbw">
+<div class="subhero">
+      <div class="wrap">
+      <div class="eyebrow">About</div>
+      <h1>소상공인과 소기업,<br><b>이 구간만 봅니다.</b></h1>
+      <p>규모를 좁힌 만큼 이 구간의 자금과 인증 사정을 깊이 압니다. 접수까지가 아니라 승인까지 함께하는 것이 저희 일하는 방식입니다.</p>
+    
+      </div>
+    </div>
+</div>
+
+<script>
+(function () {
+  /* 좌우 끝까지 꽉 차는 띠 — 스크롤바 폭 때문에 100vw 가 어긋나는 것을 바로잡습니다 */
+  var SEL = '.vbw .subhero';
+  var vbLastW = -1;
+  function vbBleed() {
+    var list = document.querySelectorAll(SEL);
+    if (!list.length) return;
+    var nowW = document.documentElement.clientWidth;
+    if (nowW === vbLastW) return;
+    vbLastW = nowW;
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      el.style.setProperty('width', 'auto', 'important');
+      el.style.setProperty('max-width', 'none', 'important');
+      el.style.setProperty('margin-left', '0', 'important');
+      el.style.setProperty('margin-right', '0', 'important');
+      var cw = document.documentElement.clientWidth;
+      var left = el.getBoundingClientRect().left;
+      el.style.setProperty('width', cw + 'px', 'important');
+      el.style.setProperty('max-width', cw + 'px', 'important');
+      el.style.setProperty('margin-left', (-left) + 'px', 'important');
+    }
+  }
+  vbBleed();
+  window.addEventListener('resize', function () { vbLastW = -1; vbBleed(); });
+  window.addEventListener('load', function () { vbLastW = -1; vbBleed(); });
+  /* 세로 스크롤바가 뒤늦게 생기면 화면 폭이 달라집니다. 10초 동안 지켜보다 달라지면 다시 맞춥니다. */
+  var vbN = 0, vbPoll = setInterval(function () { vbBleed(); if (++vbN > 25) clearInterval(vbPoll); }, 400);
+})();
+</script>
+
+</section>
+<section class="vbsec" doz_type="section" style="background:#FFFFFF;padding-top:96px;padding-bottom:96px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 대표 인사말 (사진 + 서명)
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     회사소개 2 — 배경 흰색 / 상하 여백 96px
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .ceo{display:grid;grid-template-columns:350px 1fr;gap:clamp(30px,5vw,62px);align-items:start}
+  .vbw .ceo-ph{position:relative;padding:14px 14px 0}
+  .vbw .ceo-ph::before{content:"";position:absolute;left:0;top:0;width:118px;height:118px;
+    border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-radius:12px 0 0 0}
+  .vbw .ceo-ph::after{content:"";position:absolute;right:0;bottom:58px;width:118px;height:118px;
+    border-bottom:3px solid var(--sky);border-right:3px solid var(--sky);border-radius:0 0 12px 0}
+  .vbw .ceo-ph img{display:block;width:100%;height:auto;border-radius:10px;position:relative;z-index:1;
+    box-shadow:0 18px 44px rgba(58,91,168,.17)}
+  .vbw .ceo-tag{position:relative;z-index:2;margin:-28px 0 0 20px;display:inline-flex;align-items:baseline;gap:10px;
+    background:var(--navy);color:#fff;padding:12px 22px;border-radius:8px;box-shadow:0 10px 26px rgba(58,91,168,.28)}
+  .vbw .ceo-tag span{font-size:12.5px;color:var(--gold);font-weight:700;letter-spacing:.03em}
+  .vbw .ceo-tag b{font-family:var(--display);font-size:20px;font-weight:900;letter-spacing:-.02em}
+  .vbw .ceo-q{font-size:clamp(30px,4.2vw,44px);color:var(--navy);margin:13px 0 26px;line-height:1.24;letter-spacing:-.03em}
+  .vbw .ceo-tx p{font-size:16px;line-height:1.95;color:var(--ink-2);margin:0 0 17px}
+  .vbw .ceo-tx p b{color:var(--ink);font-weight:800}
+  .vbw .ceo-sl{margin:30px 0 0!important}
+  .vbw .ceo-sl span{font-family:var(--display);font-size:clamp(19px,2.4vw,24px);font-weight:900;color:var(--navy);
+    letter-spacing:-.02em;line-height:1.75;background-image:linear-gradient(transparent 62%,var(--gold-100) 62%);padding:0 3px}
+  .vbw .ceo-sign{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .vbw .ceo-sign .r{font-size:14.5px;color:var(--ink-2);font-weight:700}
+  .vbw .ceo-sign .sg{font-family:"Nanum Brush Script","Presentation",cursive;font-size:48px;
+    color:var(--navy);line-height:1;letter-spacing:.02em}
+  @media (max-width:860px){
+    .vbw .ceo{grid-template-columns:1fr;gap:26px}
+    .vbw .ceo-ph{max-width:290px;margin:0 auto}
+    .vbw .ceo-ph::before{width:84px;height:84px}
+    .vbw .ceo-ph::after{width:84px;height:84px;bottom:52px}
+    .vbw .ceo-q{font-size:clamp(26px,7vw,34px);margin:10px 0 20px}
+    .vbw .ceo-tx p{font-size:15.5px;line-height:1.9}
+    .vbw .ceo-sign .sg{font-size:40px}
+  }
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .sec-head{margin-bottom:28px}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+</style>
+
+<div class="vbw">
+      <div class="ceo">
+        <div class="ceo-ph">
+          <img src="data:image/jpeg;base64,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" alt="윤파트너스 대표이사">
+          <div class="ceo-tag"><span>대표이사</span><b>[대표자명]</b></div>
+        </div>
+        <div class="ceo-tx">
+          <div class="eyebrow">Message</div>
+          <h2 class="ceo-q">회사 안에서는<br>회사가 보이지 않습니다.</h2>
+          <p>수많은 기업을 만나며 같은 질문이 남았습니다. <b>왜 여기서 더 올라가지 못할까.</b> 사업이 부실해서가 아니었습니다. 회사의 단계에 맞는 로드맵이 없었고, 그래서 움직일 순서를 잡지 못했을 뿐이었습니다.</p>
+          <p>저는 이것을 <b>메타인지의 문제</b>라고 봅니다. 대표님도 구성원도 회사 안에 있기 때문에 자기 회사를 객관적으로 보기 어렵습니다. 밖에서 보면 지금 무엇이 비어 있고 무엇을 먼저 해야 하는지가 선명하게 보입니다.</p>
+          <p>그 자리에서 저희가 합니다. 회사의 단계를 먼저 읽고 <b>정책자금과 정부지원사업, 기업인증의 순서</b>를 설계합니다. 접수에서 끝내지 않고 승인까지, <b>창업기에서 성장기로, 성장기에서 도약기로 건너가는 과정</b>까지 같은 담당자가 함께 갑니다.</p>
+          <p>윤파트너스라는 이름에 저희가 일하는 방식을 담았습니다. 서류 한 번 봐 드리고 끝나는 관계가 아니라, <b>회사가 다음 단계로 올라설 때까지 옆에서 같이 걷는 파트너</b>가 되겠다는 뜻입니다.</p>
+          <p class="ceo-sl"><span>대표님의 든든한 파트너</span></p>
+          <div class="ceo-sign">
+            <span class="r">윤파트너스 대표이사</span>
+            <span class="sg">[대표자명]</span>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script>
+(function () {
+  /* 스크립트 없음 */
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section" style="background:#F2F6FC;padding-top:80px;padding-bottom:80px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 구성원과 조직 (조직도)
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     회사소개 3 — 배경 연한 네이비 #F2F6FC / 상하 여백 80px
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  .vbw .org{padding:32px 20px;border:1px solid var(--line);background:var(--navy-50);border-radius:10px;overflow-x:auto}
+  .vbw .org-in{min-width:700px;display:grid;justify-items:center}
+  .vbw .org-box{background:#fff;border:1.5px solid var(--navy);color:var(--navy);font-weight:700;padding:12px 32px;border-radius:8px;font-size:17px;font-family:var(--display)}
+  .vbw .org-stem{width:2px;height:26px;background:var(--navy-300)}
+  .vbw .org-branch{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative;padding-top:26px;width:100%}
+  .vbw .org-branch::before{content:"";position:absolute;top:0;left:10%;right:10%;height:2px;background:var(--navy-300)}
+  .vbw .ob{position:relative;background:#fff;border:1px solid var(--line-2);border-top:3px solid var(--gold);padding:20px 10px;border-radius:8px;text-align:center}
+  .vbw .ob::before{content:"";position:absolute;top:-26px;left:calc(50% - 1px);width:2px;height:26px;background:var(--navy-300)}
+  .vbw .ob b{display:block;font-family:var(--display);font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-.025em;white-space:nowrap}
+  .vbw .ob span{display:block;font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .sec-head{margin-bottom:28px}
+    .vbw .org-in{min-width:0}
+    .vbw .org-branch{grid-template-columns:1fr;padding-top:8px}
+    .vbw .org-branch::before, .vbw .ob::before{display:none}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+</style>
+
+<div class="vbw">
+      <div class="sec-head">
+        <div class="eyebrow">Team</div>
+        <h2 class="sec-h"><span class="emo">🏢</span>구성원과 조직</h2>
+        <p class="sec-p">상담 접수부터 승인, 사후관리까지 담당이 이어집니다.</p>
+      </div>
+      <div class="org">
+        <div class="org-in">
+          <div class="org-box">대표이사</div>
+          <div class="org-stem"></div>
+          <div class="org-branch">
+            <div class="ob"><b>자금조달팀</b></div>
+            <div class="ob"><b>기업인증팀</b></div>
+            <div class="ob"><b>경영지원팀</b></div>
+            <div class="ob"><b>마케팅팀</b></div>
+            <div class="ob"><b>개발팀</b></div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script>
+(function () {
+  /* 스크립트 없음 */
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section" style="background:#F2F6FC;padding-top:80px;padding-bottom:80px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 오시는 길
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+
+     ▣ [주소] [상세주소] [대표번호] [가까운 역 · 출구] [도보 몇 분 · 거리] [주차 안내]
+        여섯 자리를 실제 값으로 바꿔 주세요. 지도 버튼 주소도 같이 바뀝니다.
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .vbw .narrow{max-width:900px}
+  .vbw .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px}
+  .vbw .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbw .sec-h{font-size:clamp(22px,3.2vw,30px);color:var(--navy);margin:12px 0 10px}
+  .vbw .sec-p{font-size:17px;line-height:1.8;color:var(--ink-2);max-width:680px}
+  @media (max-width:720px){
+    .vbw .sec-p br{display:none}
+  }
+  .vbw .sec-head{margin-bottom:42px}
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .at-h .emo{margin-right:9px}
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .midcta .wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+  @media (max-width:720px){
+    .vbw .midcta .wrap{flex-direction:column;gap:20px}
+  }
+  .vbw .tile.inst .ilogo .emo{font-size:30px;line-height:1}
+  .vbw .maplay{display:grid;grid-template-columns:1.35fr 1fr;gap:22px;align-items:stretch}
+  .vbw .mapinfo{border:1px solid var(--line);border-radius:10px;background:#fff;padding:26px 24px;
+    display:flex;flex-direction:column}
+  .vbw .mapinfo dl{margin:0;display:grid;grid-template-columns:76px 1fr;row-gap:15px;column-gap:14px}
+  .vbw .mapinfo dt{font-size:13.5px;font-weight:800;color:var(--navy-500);padding-top:2px}
+  .vbw .mapinfo dd{margin:0;font-size:15px;color:var(--ink-2);line-height:1.7}
+  .vbw .mapinfo dd b{color:var(--ink);font-weight:800}
+  .vbw .mapbtns{margin-top:auto;padding-top:22px;display:flex;gap:9px;flex-wrap:wrap}
+  .vbw .mapbtns a{flex:1 1 0;min-width:132px;text-align:center;justify-content:center}
+  @media (max-width:860px){
+    .vbw .maplay{grid-template-columns:1fr}
+    .vbw .mapinfo{padding:22px 20px}
+    .vbw .mapinfo dl{grid-template-columns:68px 1fr;row-gap:13px}
+  }
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .hero .eyebrow{justify-content:center}
+  .vbw .subhero .eyebrow{justify-content:center}
+  .vbw .sec-head{text-align:center}
+  .vbw .sec-head .eyebrow{justify-content:center}
+  .vbw .sec-p{margin-left:auto;margin-right:auto}
+  .vbw .center-btn{text-align:center}
+  .vbw .emo{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif;
+       font-style:normal;line-height:1;display:inline-block}
+  .vbw .stage h3 .emo, .vbw .simb h3 .emo, .vbw .sec-h .emo{margin-right:9px}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .wrap{padding:0 20px}
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+    .vbw .sec-head{margin-bottom:28px}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+
+  /* ── 제목 → 지도 → 안내 카드 (세로) ── */
+  .vbw .maplay{display:block;max-width:980px;margin:0 auto}
+  .vbw .mapinfo{border:1px solid var(--line);border-radius:12px;background:#fff;padding:26px 28px}
+  .vbw .mapinfo dl{display:grid;grid-template-columns:76px 1fr 76px 1fr;
+    row-gap:16px;column-gap:14px;margin:0}
+  .vbw .mapinfo dt{font-size:13.5px;font-weight:800;color:var(--navy-500);padding-top:2px}
+  .vbw .mapinfo dd{margin:0;font-size:15px;color:var(--ink-2);line-height:1.7}
+  .vbw .mapbtns{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;gap:10px;flex-wrap:wrap}
+  .vbw .mapbtns a{flex:1 1 0;min-width:150px;text-align:center;justify-content:center}
+  /* 아임웹 지도 위젯 : 테두리와 둥근 모서리만 입힙니다 (옮기지 않습니다) */
+  .vbw ~ * .image-map,.image-map{border-radius:12px;overflow:hidden}
+  @media (max-width:860px){
+    .vbw .mapinfo{padding:20px 18px}
+    .vbw .mapinfo dl{grid-template-columns:68px 1fr;row-gap:13px}
+    .vbw .mapbtns a{min-width:0}
+  }
+
+  /* 지도 위로 옮긴 제목 */
+  .vbw-head{max-width:980px;margin:0 auto 26px}
+  .vbw-head .sec-head{margin-bottom:0}
+  /* 아임웹 지도에 테두리를 입혀 안내 카드와 짝을 맞춥니다 */
+  .image-map{border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    max-width:980px;margin:0 auto 18px}
+  .vbw .mapinfo{max-width:980px;margin:0 auto}
+</style>
+
+<div class="vbw">
+      <div class="sec-head">
+        <div class="eyebrow">Location</div>
+        <h2 class="sec-h"><span class="emo">📍</span>오시는 길</h2>
+        <p class="sec-p">방문 상담은 예약제로 운영합니다. 오시기 전에 시간을 먼저 잡아 주세요.</p>
+      </div>
+
+      <div class="maplay">
+        <div class="mapinfo">
+          <dl>
+            <dt>주소</dt>
+            <dd><b>[주소]</b><br>[상세주소]</dd>
+            <dt>지하철</dt>
+            <dd><b>[가까운 역 · 출구]</b><br><span style="color:var(--muted);font-size:13.5px">[도보 몇 분 · 거리]</span></dd>
+            <dt>주차</dt>
+            <dd>[주차 안내]<br><span style="color:var(--muted);font-size:13.5px">방문 등록이 필요하니 도착하시면 알려 주세요</span></dd>
+            <dt>상담 시간</dt>
+            <dd>평일 09:30 – 17:30<br><span style="color:var(--muted);font-size:13.5px">(점심 11:30 – 12:30)</span></dd>
+            <dt>전화</dt>
+            <dd><b>[대표번호]</b></dd>
+          </dl>
+          <div class="mapbtns">
+            <!-- ▼ [주소] 를 실제 주소로 바꾸면 지도 버튼이 바로 작동합니다 -->
+            <a class="btn btn-navy" href="https://map.naver.com/p/search/[주소]" target="_blank" rel="noopener">네이버 지도</a>
+            <a class="btn btn-ghost" href="https://map.kakao.com/?q=[주소]" target="_blank" rel="noopener">카카오맵</a>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script>
+(function () {
+  // 아임웹 지도는 옮기면 깨지므로, 제목만 지도 위로 올립니다.
+  var me = document.currentScript;
+  function run() {
+    var wrap = me && me.previousElementSibling && me.previousElementSibling.classList.contains('vbw')
+             ? me.previousElementSibling
+             : document.querySelector('.vbw .mapinfo') && document.querySelector('.vbw .mapinfo').closest('.vbw');
+    if (!wrap) return false;
+    var head = wrap.querySelector('.sec-head');
+    var map  = document.querySelector('[data-widget-type="map"]');
+    if (!head || !map) return false;
+    var box = map.closest('[doz_type="widget"]') || map;
+    if (head.dataset.vbMoved) return true;
+    // .vbw 로 감싸서 옮겨야 스타일이 유지됩니다
+    var holder = document.createElement('div');
+    holder.className = 'vbw vbw-head';
+    holder.appendChild(head);
+    box.parentNode.insertBefore(holder, box);
+    head.dataset.vbMoved = '1';
+    return true;
+  }
+  if (!run()) {
+    var n = 0;
+    var t = setInterval(function () { if (run() || ++n > 40) clearInterval(t); }, 150);
+  }
+})();
+</script>
+
+</div>
+</section>
+<section class="vbsec" doz_type="section" style="background:#3A5BA8;padding-top:96px;padding-bottom:96px;">
+<div class="vbcontainer">
+<!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 신청 안내 문구 + 아임웹 입력폼 (좌우 2단)
+
+     넣는 곳 : 입력폼이 들어 있는 섹션의 "바로 위 섹션"에 코드 위젯으로
+     섹션 설정 : 배경 #3A5BA8 / 글자색 흰색 / 상하 여백 96px
+
+     ※ 입력폼 위젯을 이 코드 "바로 아래"에, 같은 섹션 안에 넣으세요.
+        스크립트가 폼을 오른쪽 칸으로 끌어옵니다. 폼 위젯을 지우지 마세요.
+        한 섹션에 담아야 '섹션 반복'으로 전 페이지에 쓸 수 있습니다.
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    /* 윤파트너스 브랜드 컬러 — 인디고 #3A5BA8 · 스카이 #98D5E7 · 옐로 #FCD065 · 먹 #332B29 */
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-50:#F2F6FC;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --danger:#B4341F;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  }
+
+  /* ───────── 좌우 2단 ───────── */
+  .vbapply,.vbapply *{box-sizing:border-box}
+  .vbapply{display:grid;max-width:1120px;margin:0 auto;font-family:var(--sans);
+    grid-template-columns:1fr 1.08fr;
+    grid-template-rows:auto auto;
+    grid-template-areas:"cta form" "cont form";
+    column-gap:clamp(32px,4vw,60px);row-gap:0;align-items:start}
+  .vbcta{grid-area:cta}
+  #vbFormSlot{grid-area:form;align-self:center}
+  .vbcontact{grid-area:cont}
+
+  /* ───────── 왼쪽 안내 문구 ───────── */
+  .vbcta{text-align:left}
+  .vbcta .eyebrow{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+  .vbcta .eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+  .vbcta h2{margin:16px 0 0;font-family:var(--display);font-weight:900;
+    font-size:clamp(26px,3.4vw,40px);line-height:1.28;letter-spacing:-.03em;color:#fff}
+  .vbcta h2 b{font-weight:inherit;color:var(--gold);
+    text-shadow:0 0 20px rgba(252,208,101,.55),0 0 46px rgba(252,208,101,.28)}
+  .vbcta .free{display:inline-flex;align-items:center;margin-top:20px;
+    background:rgba(252,208,101,.16);border:1px solid var(--gold);color:var(--gold);
+    font-weight:700;font-size:14px;padding:9px 18px;border-radius:999px}
+  .vbcta .free b{font-family:var(--display);font-weight:900;margin-right:4px}
+  .vbcta .cp{margin:18px 0 0;font-size:16px;line-height:1.8;color:#D9E3F5}
+  .vbcontact{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);
+    display:grid;gap:7px;font-size:14.5px;color:#D9E3F5;line-height:1.7;text-align:left}
+  .vbcontact b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,32px);
+    color:#fff;letter-spacing:-.02em;margin-bottom:5px}
+
+  /* ───────── 오른쪽 폼 자리 ───────── */
+  #vbFormSlot{min-width:0}
+
+  /* ───────── 아임웹 입력폼 디자인 ───────── */
+  .form-widget{max-width:none!important;margin:0!important;
+    background:#fff!important;border-radius:14px!important;padding:30px 28px 28px!important;
+    box-shadow:0 22px 54px rgba(17,24,47,.3);font-family:var(--sans)!important;text-align:left!important}
+  .form-widget .form-group{margin-bottom:17px!important}
+  .form-widget .control-label{display:block!important;font-size:13.5px!important;font-weight:700!important;
+    color:var(--ink-2)!important;margin-bottom:8px!important;letter-spacing:-.01em}
+  .form-widget .icon-required{color:var(--danger)!important;margin-left:4px;font-style:normal}
+
+  .form-widget .form-control{width:100%!important;height:50px!important;
+    border:1px solid var(--line-2)!important;border-radius:9px!important;
+    padding:0 15px!important;font-size:15.5px!important;font-family:var(--sans)!important;
+    background:#fff!important;color:var(--ink)!important;box-shadow:none!important;
+    transition:border-color .16s,box-shadow .16s}
+  .form-widget .form-control:focus{border-color:var(--navy)!important;outline:none!important;
+    box-shadow:0 0 0 3px rgba(58,91,168,.13)!important}
+  .form-widget .form-control::placeholder{color:#B3B9CC}
+
+  .form-widget .phonenumber_wrap{display:flex!important;align-items:center;gap:8px;
+    width:100%!important;max-width:100%!important}
+  .form-widget .phonenumber_wrap .form-control,
+  .form-widget .phonenumber_wrap input.inline-blocked{
+    flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;
+    text-align:center!important;display:block!important;margin:0!important}
+  .form-widget .phonenumber_wrap .line{color:var(--line-2);flex:0 0 auto;margin:0!important}
+
+  /* 업종 → 알약 버튼 */
+  .form-widget .radio.radio-styled{display:inline-block!important;margin:0 6px 7px 0!important;
+    padding:0!important;min-height:0!important}
+  .form-widget .radio-styled label{margin:0!important;padding:0!important;cursor:pointer;display:block}
+  .form-widget .radio-styled input[type="radio"]{position:absolute!important;opacity:0!important;
+    width:1px!important;height:1px!important;margin:0!important}
+  /* 아임웹이 붙이는 라디오 아이콘(가상요소)이 글자를 가리지 않도록 제거 */
+  .form-widget .radio-styled label::before,.form-widget .radio-styled label::after,
+  .form-widget .radio-styled span::before,.form-widget .radio-styled span::after{
+    content:none!important;display:none!important}
+  .form-widget .radio-styled input[type="radio"] + span{display:inline-block;
+    padding:9px 16px!important;margin:0!important;text-indent:0!important;
+    border:1px solid var(--line-2);border-radius:999px;font-size:13.5px;font-weight:700;
+    line-height:1.4;white-space:nowrap;overflow:visible;
+    color:var(--ink-2);background:#fff;transition:background-color .16s,border-color .16s,color .16s}
+  .form-widget .radio-styled input[type="radio"]:hover + span{border-color:var(--navy-300)}
+  .form-widget .radio-styled input[type="radio"]:checked + span{background:var(--navy);
+    border-color:var(--navy);color:#fff}
+
+  /* 지역 드롭다운 */
+  .form-widget .form-select-wrap{position:relative}
+  .form-widget select.form-control{appearance:none;-webkit-appearance:none;padding-right:42px!important;cursor:pointer}
+  .form-widget .form-select-wrap::after{content:"";position:absolute;right:17px;top:20px;
+    width:9px;height:9px;border-right:2px solid var(--navy-500);border-bottom:2px solid var(--navy-500);
+    transform:rotate(45deg);pointer-events:none}
+
+  /* 동의 약관 박스 (아임웹은 div 로 그립니다) — 작게, 세로 스크롤만 */
+  .form-widget .form-group.privacy .form-control,
+  .form-widget .form-group.privacy div.form-control,
+  .form-widget #privacy .form-control,
+  .form-widget textarea.form-control{
+    height:74px!important;min-height:74px!important;max-height:74px!important;
+    padding:10px 13px!important;font-size:12px!important;line-height:1.7!important;
+    color:var(--ink-2)!important;background:var(--navy-50)!important;
+    border:1px solid var(--line)!important;border-radius:8px!important;
+    overflow-y:auto!important;overflow-x:hidden!important;resize:none!important;
+    white-space:normal!important;word-break:keep-all;overflow-wrap:anywhere}
+  /* 가로 스크롤을 만드는 요소들 차단 */
+  .form-widget .form-group.privacy .form-control *{
+    max-width:100%!important;white-space:normal!important;word-break:keep-all;overflow-wrap:anywhere}
+  .form-widget .form-group.privacy .form-control br{display:block;content:"";margin-top:2px}
+  .form-widget .form-group.privacy{margin-bottom:14px!important}
+  .form-widget .form-group.privacy .control-label{font-size:13px!important;margin-bottom:6px!important}
+  /* 스크롤바 얇게 */
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar{width:6px;height:0}
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar-thumb{
+    background:var(--line-2);border-radius:3px}
+  .form-widget .form-group.privacy .form-control::-webkit-scrollbar-track{background:transparent}
+
+  /* 동의 체크박스 — 아임웹이 그리는 네모(가상요소)는 끄고 진짜 체크박스를 보여줍니다 */
+  .form-widget .checkbox-styled label::before,.form-widget .checkbox-styled label::after,
+  .form-widget .checkbox-styled span::before,.form-widget .checkbox-styled span::after{
+    content:none!important;display:none!important}
+  .form-widget .checkbox,.form-widget .checkbox.checkbox-styled{
+    margin:10px 0 0!important;padding:0!important;min-height:0!important;display:block!important}
+  .form-widget .checkbox-styled label{display:flex!important;align-items:flex-start;gap:9px;
+    margin:0!important;padding:0!important;cursor:pointer;width:100%}
+  .form-widget .checkbox-styled input[type="checkbox"],
+  .form-widget .checkbox-styled input._checkbox{
+    appearance:auto!important;-webkit-appearance:checkbox!important;
+    display:inline-block!important;visibility:visible!important;opacity:1!important;
+    position:static!important;left:auto!important;top:auto!important;
+    transform:none!important;clip:auto!important;clip-path:none!important;
+    width:18px!important;height:18px!important;min-width:18px!important;
+    margin:1px 0 0!important;padding:0!important;border:0!important;
+    flex:0 0 auto!important;accent-color:var(--navy);cursor:pointer;
+    pointer-events:auto!important;z-index:1}
+  .form-widget .checkbox-styled span{display:inline-block!important;font-size:13.5px!important;
+    line-height:1.6!important;color:var(--ink)!important;font-weight:700!important;
+    margin:0!important;padding:0!important;border:0!important;background:none!important;
+    text-indent:0!important;overflow:visible!important;white-space:normal!important}
+
+  /* 제출 버튼 */
+  .form-widget .btn-primary,.form-widget ._input_form_submit{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    border:1.5px solid var(--gold)!important;color:var(--navy)!important;
+    height:54px!important;border-radius:9px!important;width:100%!important;
+    font-family:var(--sans)!important;font-size:16px!important;font-weight:800!important;
+    letter-spacing:-.01em;text-decoration:none!important;
+    box-shadow:0 10px 26px rgba(252,208,101,.3)!important;transition:background-color .16s}
+  .form-widget .btn-primary:hover,.form-widget ._input_form_submit:hover{
+    background-color:#EFBB3F!important;text-decoration:none!important}
+  .form-widget .text-center{margin-top:4px}
+  .form-widget .form-group a{color:var(--navy)!important;text-decoration:underline;text-underline-offset:2px}
+
+  @media (max-width:900px){
+    .vbapply{grid-template-columns:1fr;grid-template-rows:auto auto auto;
+      grid-template-areas:"cta" "form" "cont";row-gap:28px;column-gap:0}
+    .vbcta{text-align:center}
+    .vbcta .eyebrow{justify-content:center}
+    .vbcontact{text-align:center;margin-top:0;padding-top:22px}
+    .form-widget{padding:24px 20px 22px!important;border-radius:12px!important}
+    .form-widget .form-control{height:48px!important;font-size:15px!important}
+    .form-widget .radio-styled input[type="radio"] + span{padding:8px 13px;font-size:13px}
+  }
+
+  /* ── 동의 영역 ── */
+  .vbw-agall{display:flex!important;align-items:center;gap:12px;margin:10px 0 16px;
+    padding:13px 16px;background:#3A5BA8;border:0;border-radius:9px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(58,91,168,.22)}
+  .vbw-agall input{width:21px!important;height:21px!important;margin:0!important;flex:none;
+    accent-color:#FCD065;cursor:pointer;opacity:1!important;position:static!important;
+    appearance:auto!important;-webkit-appearance:checkbox!important;clip:auto!important;transform:none!important}
+  .vbw-agall b{font-size:15.5px!important;font-weight:800!important;color:#fff!important;
+    letter-spacing:-.02em;line-height:1.45;display:block}
+  /* 확인창을 건너뛰는 동안에는 그 창이 눈에 보이지 않게 합니다 */
+  html.vb-skipconfirm [id^="input_form_complete_modal"],
+  html.vb-skipconfirm .modal-backdrop{opacity:0!important;pointer-events:none!important;
+    transition:none!important}
+  .vbw-policybtn{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:5px;
+    cursor:pointer;font-size:12px;font-weight:700;color:#5D7CC4;background:#F2F6FC;
+    border:1px solid #CBD5EA;border-radius:999px;padding:5px 12px;line-height:1;
+    transition:background-color .18s ease,border-color .18s ease}
+  .vbw-policybtn:hover{background:#DFE8F7;border-color:#9BB3DF}
+</style>
+
+<div class="vbapply" id="apply">
+  <div class="vbcta">
+    <div class="eyebrow">Contact</div>
+    <h2><b>가능한지부터</b><br>확인해 보세요.</h2>
+    <span class="free"><b>가능 여부 진단</b>, 첫 상담은 무료입니다</span>
+    <p class="cp">지금 해당되는 정책자금, 지원사업, 기업인증이 궁금하다면 바로 신청하세요.</p>
+  </div>
+  <!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 무료 진단 신청 폼 (깃허브 페이지스용)
+
+     이 조각은 `14_신청안내+폼디자인.html` 안의
+         <div id="vbFormSlot"></div>
+     자리에 그대로 넣습니다. 디자인 CSS 는 그 위젯에 이미 들어 있습니다.
+
+     ▣ 보내는 곳은 **이미 쓰고 계신 접수기**입니다.
+        대행사 랜딩(route=hanjungbon) 과 같은 웹앱에, route 만 다르게 보냅니다.
+            route=homepage  →  「DB 입력」 H열 유입경로 = 홈페이지
+
+        그래서 차단번호 · 같은 날 같은 번호 · 홈페이지 30일 재신청 거르기 ·
+        텔레그램 알림 · 「접수기록」 기록이 **다른 경로와 똑같이** 적용됩니다.
+
+     ▣ 고칠 곳은 아래 ENDPOINT 한 줄뿐입니다. (기존 배포 주소 그대로)
+     ══════════════════════════════════════════════════════════════ -->
+<div class="form-widget" id="vbApplyForm">
+  <h3 class="vbf-title">무료 진단 신청</h3>
+  <p class="vbf-lead">성함과 연락처만 주셔도 됩니다. 1분이면 끝납니다.</p>
+
+  <form id="vbf" method="post" accept-charset="utf-8" novalidate>
+
+    <!-- 봇 거르기 — 사람 눈에는 안 보입니다. 채워져 있으면 보내지 않습니다 -->
+    <div class="vbf-hp" aria-hidden="true">
+      <label>회사 주소<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-name">성함<i class="icon-required">*</i></label>
+      <input class="form-control" type="text" id="vbf-name" name="name"
+             placeholder="예) 홍길동" required autocomplete="name" maxlength="30">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-tel1">연락처<i class="icon-required">*</i></label>
+      <div class="phonenumber_wrap">
+        <input class="form-control" type="tel" id="vbf-tel1" value="010"
+               inputmode="numeric" maxlength="3" required aria-label="연락처 앞자리">
+        <span class="line">–</span>
+        <input class="form-control" type="tel" id="vbf-tel2"
+               inputmode="numeric" maxlength="4" required aria-label="연락처 가운데자리">
+        <span class="line">–</span>
+        <input class="form-control" type="tel" id="vbf-tel3"
+               inputmode="numeric" maxlength="4" required aria-label="연락처 뒷자리">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-biz">사업자명</label>
+      <input class="form-control" type="text" id="vbf-biz" name="bizName"
+             placeholder="예) 윤파트너스" autocomplete="organization" maxlength="40">
+    </div>
+
+    <!-- ▣ 업종 — 「DB 입력」 E열. 값은 다른 경로(레베이스·메타)와 **글자까지 같아야** 합니다 -->
+    <div class="form-group">
+      <span class="control-label">업종</span>
+      <div class="vbf-pills">
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="도소매업"><span>도소매업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="제조업"><span>제조업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="건설업"><span>건설업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="운수·물류"><span>운수·물류</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="음식·숙박업"><span>음식·숙박업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="통신판매업"><span>통신판매업</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="IT·정보서비스"><span>IT·정보서비스</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="industry" value="기타 서비스업"><span>기타 서비스업</span></label></div>
+      </div>
+    </div>
+
+    <!-- ▣ 매출 — 「DB 입력」 F열(2025 매출). 광고 폼의 선택지와 맞춰야 합니다 -->
+    <div class="form-group">
+      <span class="control-label">연 매출</span>
+      <div class="vbf-pills">
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="1억 미만"><span>1억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="1억 ~ 3억 미만"><span>1억 ~ 3억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="3억 ~ 5억 미만"><span>3억 ~ 5억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="5억 ~ 10억 미만"><span>5억 ~ 10억 미만</span></label></div>
+        <div class="radio radio-styled"><label><input type="radio" name="revenue" value="10억 이상"><span>10억 이상</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="vbf-region">사업장 소재지</label>
+      <div class="form-select-wrap">
+        <select class="form-control" id="vbf-region" name="region">
+          <option value="">선택해 주세요</option>
+          <option>서울</option><option>부산</option><option>대구</option><option>인천</option>
+          <option>광주</option><option>대전</option><option>울산</option><option>세종</option>
+          <option>경기</option><option>강원</option><option>충북</option><option>충남</option>
+          <option>전북</option><option>전남</option><option>경북</option><option>경남</option>
+          <option>제주</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group privacy">
+      <span class="control-label">개인정보 수집·이용 동의</span>
+      <div class="form-control" tabindex="0" role="region" aria-label="개인정보 수집·이용 안내">
+        <b>수집 항목</b> 성함 · 연락처(필수), 사업자명 · 업종 · 연 매출 · 사업장 소재지(선택)<br>
+        <b>이용 목적</b> 상담 신청 접수 및 가능 여부 진단 안내<br>
+        <b>보유 기간</b> 수집일로부터 3년 또는 동의 철회 시까지<br>
+        <b>거부 권리</b> 동의를 거부하실 수 있으나, 필수 항목에 동의하지 않으시면 상담 신청이 접수되지 않습니다<br>
+        <b>안내 발송</b> 접수되면 입력하신 번호로 접수 확인 알림톡이 발송됩니다
+      </div>
+    </div>
+
+    <div class="checkbox checkbox-styled vbf-all">
+      <label><input type="checkbox" id="vbf-all"><span>전체 동의</span></label>
+    </div>
+    <div class="checkbox checkbox-styled">
+      <label><input type="checkbox" id="vbf-agree1" required><span>[필수] 개인정보 수집·이용에 동의합니다. <a href="/개인정보처리방침.html" target="_blank" rel="noopener">전문 보기</a></span></label>
+    </div>
+    <div class="checkbox checkbox-styled">
+      <label><input type="checkbox" id="vbf-agree2"><span>[선택] 마케팅·광고 활용에 동의합니다.</span></label>
+    </div>
+
+    <p class="vbf-msg" id="vbf-msg" role="status" aria-live="polite" hidden></p>
+
+    <div class="form-group vbf-submit">
+      <button type="submit" class="btn-primary" id="vbf-btn">무료 진단 신청</button>
+    </div>
+    <p class="text-center vbf-after">접수 확인 후 담당자가 가장 빠른 시간에 연락드립니다.</p>
+  </form>
+</div>
+
+<iframe name="vbf_sink" id="vbf_sink" title="신청 처리" style="display:none;width:0;height:0;border:0"></iframe>
+
+<style>
+  /* 위젯 14 의 폼 CSS 가 대부분을 맡습니다. 여기엔 그 CSS 에 없는 것만 둡니다. */
+  #vbApplyForm .vbf-title{margin:0 0 6px;font-family:var(--display);font-weight:900;
+    font-size:21px;letter-spacing:-.025em;color:var(--ink)}
+  #vbApplyForm .vbf-lead{margin:0 0 20px;font-size:13.5px;color:var(--muted);line-height:1.7}
+  #vbApplyForm .vbf-pills{display:flex;flex-wrap:wrap;gap:0}
+  #vbApplyForm .vbf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  #vbApplyForm .vbf-all{margin-bottom:2px!important;padding-bottom:9px!important;
+    border-bottom:1px solid var(--line)}
+  #vbApplyForm .vbf-submit{margin:18px 0 0!important}
+  #vbApplyForm .vbf-after{margin:10px 0 0;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.6}
+  #vbApplyForm .vbf-msg{margin:14px 0 0;padding:11px 13px;border-radius:8px;
+    font-size:13.5px;font-weight:700;line-height:1.6;word-break:keep-all}
+  #vbApplyForm .vbf-msg.err{background:#FDEDEC;color:#9C2B20;border:1px solid #F3C9C4}
+  #vbApplyForm .form-control[aria-invalid="true"]{border-color:#C0392B!important;
+    box-shadow:0 0 0 3px rgba(192,57,43,.12)!important}
+  #vbApplyForm button[disabled]{opacity:.6;cursor:progress}
+  #vbApplyForm .vbf-done{text-align:center;padding:26px 6px 20px}
+  #vbApplyForm .vbf-done b{display:block;font-family:var(--display);font-weight:900;
+    font-size:20px;color:var(--navy-900);letter-spacing:-.02em;margin-bottom:9px}
+  #vbApplyForm .vbf-done p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.8}
+</style>
+
+<script>
+(function () {
+  /* ▣ 여기만 고치세요 ─────────────────────────────────────────
+     기존 접수기의 배포 주소입니다. (대행사 랜딩이 쓰는 것과 같은 주소)
+     Apps Script → 배포 → 배포 관리 에서 확인할 수 있습니다. */
+  var ENDPOINT = 'PASTE_EXISTING_EXEC_URL_HERE';
+  var ROUTE    = 'homepage';   /* 접수기 ROUTES 에 추가해야 하는 값 → 유입경로 "홈페이지" */
+  /* ───────────────────────────────────────────────────────── */
+
+  var form = document.getElementById('vbf');
+  if (!form) return;
+  var box  = document.getElementById('vbApplyForm');
+  var btn  = document.getElementById('vbf-btn');
+  var msg  = document.getElementById('vbf-msg');
+  var sink = document.getElementById('vbf_sink');
+
+  var all = document.getElementById('vbf-all');
+  var a1  = document.getElementById('vbf-agree1');
+  var a2  = document.getElementById('vbf-agree2');
+
+  /* 전체 동의 ↔ 개별 동의 */
+  all.addEventListener('change', function () { a1.checked = a2.checked = all.checked; });
+  [a1, a2].forEach(function (c) {
+    c.addEventListener('change', function () { all.checked = a1.checked && a2.checked; });
+  });
+
+  /* 연락처 — 숫자만, 다 채우면 다음 칸으로 */
+  var tels = ['vbf-tel1', 'vbf-tel2', 'vbf-tel3'].map(function (id) { return document.getElementById(id); });
+  tels.forEach(function (el, i) {
+    el.addEventListener('input', function () {
+      el.value = el.value.replace(/[^0-9]/g, '');
+      if (el.value.length >= el.maxLength && tels[i + 1]) tels[i + 1].focus();
+    });
+  });
+
+  function phone() { return tels.map(function (t) { return t.value.trim(); }).join('-'); }
+
+  function say(text) {
+    msg.textContent = text;
+    msg.className = 'vbf-msg err';
+    msg.hidden = false;
+  }
+  function bad(el, text) {
+    el.setAttribute('aria-invalid', 'true');
+    el.focus();
+    say(text);
+    return false;
+  }
+  function check() {
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    var name = document.getElementById('vbf-name');
+    if (!name.value.trim()) return bad(name, '성함을 입력해 주세요.');
+    var d = tels.map(function (t) { return t.value.trim(); });
+    if (d[0].length < 2 || d[1].length < 3 || d[2].length < 4) {
+      return bad(tels[d[0].length < 2 ? 0 : (d[1].length < 3 ? 1 : 2)], '연락처를 끝까지 입력해 주세요.');
+    }
+    if (!a1.checked) { say('개인정보 수집·이용에 동의해 주셔야 접수됩니다.'); a1.focus(); return false; }
+    return true;
+  }
+
+  /* 같은 건을 두 번 보내도 접수기가 거르도록 하는 열쇠 — 분 단위라 재시도는 한 건으로 묶입니다 */
+  function dedupeId() {
+    var d = new Date(), p = function (n) { return ('0' + n).slice(-2); };
+    return 'web-' + phone().replace(/[^0-9]/g, '') + '-' +
+           d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + p(d.getHours()) + p(d.getMinutes());
+  }
+
+  function done() {
+    box.innerHTML =
+      '<div class="vbf-done"><b>신청이 접수되었습니다.</b>' +
+      '<p>담당자가 영업일 기준 하루 안에 연락드립니다.<br>' +
+      '급하신 경우 대표번호로 바로 전화 주셔도 됩니다.</p></div>';
+  }
+
+  var sent = false, timer = null;
+
+  sink.addEventListener('load', function () {
+    if (!sent) return;              /* 첫 로드(빈 iframe)는 무시합니다 */
+    clearTimeout(timer);
+    done();
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (sent) return;
+    if (!check()) return;
+    if (form.website.value) return;                       /* 봇 */
+
+    if (ENDPOINT.indexOf('http') !== 0) {
+      say('아직 접수 주소가 연결되지 않았습니다. 대표번호로 전화 주세요.');
+      return;
+    }
+
+    /* 접수기(doPost)가 읽는 이름 그대로 보냅니다 */
+    var payload = {
+      route:      ROUTE,
+      name:       document.getElementById('vbf-name').value.trim(),
+      phone:      phone(),
+      bizName:    document.getElementById('vbf-biz').value.trim(),
+      industry:   (form.querySelector('input[name="industry"]:checked') || {}).value || '',
+      revenue:    (form.querySelector('input[name="revenue"]:checked') || {}).value || '',
+      region:     document.getElementById('vbf-region').value,
+      dedupeId:   dedupeId(),
+      agree:      'Y',
+      agreeThird: a1.checked ? 'Y' : 'N',
+      agreeSale:  a2.checked ? 'Y' : 'N',
+      pageUrl:    location.href,
+      referrer:   document.referrer || '홈페이지'
+    };
+
+    /* iframe 으로 보냅니다 — 교차출처 제약을 타지 않는 가장 확실한 방법입니다 */
+    var post = document.createElement('form');
+    post.method = 'post';
+    post.action = ENDPOINT;
+    post.target = 'vbf_sink';
+    post.acceptCharset = 'utf-8';
+    post.style.display = 'none';
+    Object.keys(payload).forEach(function (k) {
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = payload[k];
+      post.appendChild(i);
+    });
+    document.body.appendChild(post);
+
+    sent = true;
+    btn.disabled = true;
+    btn.textContent = '보내는 중…';
+    post.submit();
+
+    /* 응답을 못 읽는 경우를 대비한 안전장치 — 12초 뒤에도 조용하면 완료로 봅니다 */
+    timer = setTimeout(done, 12000);
+  });
+})();
+</script>
+
+  <div class="vbcontact">
+    <span><b>[대표번호]</b>평일 09:30 – 17:30 · 점심 11:30 – 12:30</span>
+    <span>[주소], [상세주소]</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  function move() {
+    var slot = document.getElementById('vbFormSlot');
+    if (!slot || slot.children.length) return true;
+    var form = document.querySelector('.form-widget');
+    if (!form) return false;
+
+    var sec = form.closest('[doz_type="section"]');
+    var box = form.closest('[doz_type="widget"]');
+    slot.appendChild(form);                       // 폼을 오른쪽 칸으로
+
+    // 같은 섹션 안에 있으면 섹션을 숨기면 안 됩니다 (안내 문구까지 사라짐)
+    var mySec = slot.closest('[doz_type="section"]');
+    if (sec && sec !== mySec) {
+      sec.style.display = 'none';                 // 폼만 있던 섹션은 숨김
+    } else if (box) {
+      box.style.display = 'none';                 // 같은 섹션이면 빈 위젯만 숨김
+    }
+    return true;
+  }
+
+  /* ── 동의 영역 정리 ──
+     1) 필수(개인정보)를 선택(마케팅) 위로
+     2) 폼 안의 긴 약관 상자를 감추고 "전문 보기" 로 팝업을 띄웁니다
+     3) 이용자가 직접 누르는 "모두 동의" 칸 추가
+        (필수에 선택을 몰래 묶으면 개인정보보호법에 어긋납니다) */
+  function agreeAll() {
+    if (document.querySelector('.vbw-agall')) return true;
+    var groups = [].slice.call(document.querySelectorAll('.form-group'))
+      .filter(function (g) { return g.querySelector('input[type=checkbox]'); });
+    if (groups.length < 2) return false;
+
+    var priv = groups.filter(function (g) { return /privacy/.test(g.className); })[0];
+    var opt  = groups.filter(function (g) { return !/privacy/.test(g.className); })[0];
+    if (!priv || !opt) return false;
+
+    /* 1) 순서 : 필수 → 선택 */
+    if (priv.compareDocumentPosition(opt) & Node.DOCUMENT_POSITION_PRECEDING) {
+      opt.parentNode.insertBefore(priv, opt);
+    }
+
+    /* 2) 약관 상자 → 전문 보기 버튼 */
+    var terms = priv.querySelector('.form-control');
+    var label = priv.querySelector('.control-label');
+    if (terms && label && window.SITE && typeof SITE.openPrivacy === 'function') {
+      terms.style.setProperty('display', 'none', 'important');
+      label.style.setProperty('display', 'flex', 'important');
+      label.style.setProperty('align-items', 'center', 'important');
+      label.style.setProperty('justify-content', 'flex-start', 'important');
+      label.style.setProperty('gap', '6px', 'important');
+      label.style.setProperty('width', '100%', 'important');
+      var pb = document.createElement('button');
+      pb.type = 'button';
+      pb.className = 'vbw-policybtn';
+      pb.textContent = '전문 보기 ↗';
+      label.appendChild(pb);
+      pb.addEventListener('click', function (ev) {
+        ev.preventDefault(); ev.stopPropagation();
+        SITE.openPrivacy();
+      });
+    }
+
+    /* 3) 모두 동의 */
+    var boxes = [].slice.call(document.querySelectorAll('.form-group input[type=checkbox]'));
+    var lab = document.createElement('label');
+    lab.className = 'vbw-agall';
+    lab.innerHTML = '<input type="checkbox"><b>아래 내용에 모두 동의합니다</b>';
+    priv.parentNode.insertBefore(lab, priv);
+
+    var all = lab.querySelector('input'), lock = false;
+    all.addEventListener('change', function () {
+      lock = true;
+      boxes.forEach(function (c) {
+        if (c.checked !== all.checked) {
+          c.checked = all.checked;
+          c.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+      lock = false;
+    });
+    boxes.forEach(function (c) {
+      c.addEventListener('change', function () {
+        if (lock) return;
+        all.checked = boxes.every(function (x) { return x.checked; });
+      });
+    });
+    return true;
+  }
+
+  /* ── "입력하신 내용으로 접수할까요?" 확인창 건너뛰기 ──
+     신청 버튼을 이미 눌렀는데 한 번 더 묻는 단계라 이탈이 생깁니다.
+     버튼을 누른 순간부터 그 창을 보이지 않게 가려 두고, 뜨자마자 확인을 누릅니다.
+     (다른 상황에서 뜨는 창은 건드리지 않습니다) */
+  (function skipConfirm() {
+    var root = document.documentElement;
+    var armed = 0, timer = null;
+
+    function disarm() {
+      armed = 0;
+      root.classList.remove('vb-skipconfirm');
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+    function tryConfirm() {
+      if (!armed) return;
+      var m = document.querySelector('[id^="input_form_complete_modal"]');
+      if (!m) return;
+      if (m.getBoundingClientRect().height < 10) return;
+      var ok = m.querySelector('a.btn.right');
+      if (!ok) return;
+      ok.click();
+      setTimeout(disarm, 120);
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest &&
+        e.target.closest('.form-widget .btn-primary, .form-widget a.btn');
+      if (!a || /취소/.test(a.textContent || '')) return;
+      armed = Date.now();
+      root.classList.add('vb-skipconfirm');
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(disarm, 6000);     // 창이 안 뜨면 원래대로
+      tryConfirm();
+    }, true);
+
+    var m0 = document.querySelector('[id^="input_form_complete_modal"]');
+    if (m0 && window.MutationObserver) {
+      new MutationObserver(tryConfirm).observe(m0, { attributes: true });
+    }
+    setInterval(tryConfirm, 60);            // 관찰이 늦을 때를 위한 보조
+  })();
+
+  function run() { var a = move(); var b = agreeAll(); return a && b; }
+  if (!run()) {
+    var n = 0;
+    var t = setInterval(function () { if (run() || ++n > 60) clearInterval(t); }, 150);
+  }
+})();
+</script>
+
+</div>
+</section>
+<div class="vbsec"><!-- ══════════════════════════════════════════════════════════════
+     윤파트너스 — 첫 방문 주의 안내 팝업
+     아임웹 : 섹션 추가 → 코드(HTML) 블록 → 아래 전체를 붙여넣기
+     모든 페이지 공통 — 아임웹 '전체 적용' 코드 영역(또는 푸터 스크립트)에 한 번만
+     ══════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Nanum+Brush+Script&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  .vbw,.vbw *{box-sizing:border-box}
+  .vbw{font-family:var(--sans);color:var(--ink);font-size:16px;line-height:1.8;word-break:keep-all;
+    -webkit-font-smoothing:antialiased}
+  .vbw h2,.vbw h3{margin:0;font-family:var(--display);letter-spacing:-.015em;line-height:1.3}
+  .vbw p{margin:0}
+  .vbw img{max-width:100%}
+  .vbw button{font-family:inherit}
+  .vbw a{text-decoration:none}
+
+:root{
+    color-scheme:light;
+    /* 윤파트너스 브랜드 컬러 — 로고에서 뽑았습니다
+       인디고 #3A5BA8 (메인) · 스카이 #98D5E7 (보조) · 옐로 #FCD065 (강조) · 먹 #332B29 (글자) */
+    --navy:#3A5BA8; --navy-900:#233767; --navy-700:#2E4885; --navy-500:#5D7CC4;
+    --navy-300:#9BB3DF; --navy-100:#DFE8F7; --navy-50:#F2F6FC;
+    --sky:#98D5E7; --sky-100:#E4F3F8;
+    --gold:#FCD065; --gold-800:#8A6412; --gold-100:#FEF6E1;
+    --ink:#332B29; --ink-2:#4D4643; --muted:#6F6763;
+    --line:#E5E9F3; --line-2:#CBD5EA; --white:#FFFFFF;
+    --display:"Presentation","프리젠테이션","Pretendard Variable","Pretendard","Noto Sans KR","Gothic A1",sans-serif;
+    --sans:"Pretendard Variable","Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --hd:74px; --bar:60px;
+  }
+  .vbw .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:6px;font-weight:700;font-size:15px;border:1.5px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .vbw .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .vbw .btn-gold:hover{background:#EFBB3F}
+  .vbw .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .vbw .btn-navy:hover{background:var(--navy-700)}
+  .vbw .btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+  .vbw .btn-ghost:hover{background:var(--navy-50)}
+  .vbw .btn-block{width:100%;height:56px}
+  .vbw .hd .btn{height:42px;padding:0 18px;font-size:14px}
+  .vbw .hero .btn-gold{box-shadow:0 12px 32px rgba(252,208,101,.3)}
+  .vbw .hero .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.06)}
+  .vbw .hero .btn-ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  .vbw .sec-h b, .vbw .subhero h1 b, .vbw .at-h b, .vbw .target h2 b, .vbw .poptop h2 b{font-weight:inherit;
+    background-image:linear-gradient(transparent 56%,rgba(252,208,101,.45) 56%);
+    padding:0 .06em;border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .vbw .btn:active, .vbw .tile:active, .vbw .card:active{transform:none}
+  }
+  .vbw .chkres .btn{opacity:.55;transition:opacity .25s ease}
+  .vbw .chkres.on .btn{opacity:1}
+  .vbw .pop{position:fixed;inset:0;z-index:20000!important;display:flex;align-items:center;justify-content:center;
+    padding:20px;background:rgba(19,27,52,.62);backdrop-filter:blur(3px);
+    opacity:0;transition:opacity .25s ease}
+  .vbw .pop.on{opacity:1}
+  .vb-pop-anchor{display:block;width:100%;height:0;overflow:hidden}
+  .vbw .pop{display:none}
+  .vbw .pop.open{display:flex}
+  .vbw .popbox{position:relative;width:100%;max-width:470px;max-height:calc(100vh - 40px);overflow:auto;
+    background:#fff;border-top:5px solid var(--gold);border-radius:4px 4px 16px 16px;
+    box-shadow:0 34px 80px rgba(19,27,52,.42);
+    transform:translateY(16px);transition:transform .3s cubic-bezier(.2,.8,.3,1)}
+  .vbw .pop.on .popbox{transform:none}
+  .vbw .popx{position:absolute;top:14px;right:14px;width:34px;height:34px;border:0;border-radius:9px;
+    background:transparent;color:var(--muted);font-size:17px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:background-color .16s,color .16s}
+  .vbw .popx:hover{background:var(--navy-50);color:var(--navy)}
+  .vbw .poptop{padding:26px 26px 22px}
+  .vbw .pchip{display:inline-block;background:var(--gold-100);border:1px solid var(--gold);color:var(--gold-800);
+    font-size:11.5px;font-weight:800;letter-spacing:.14em;padding:4px 12px;border-radius:999px}
+  .vbw .poptop h2{margin:14px 0 0;font-size:22px;line-height:1.42;color:var(--navy);letter-spacing:-.025em}
+  .vbw .poptop p{margin:13px 0 0;font-size:13.5px;line-height:1.8;color:var(--ink-2)}
+  .vbw .popwarn{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--navy-50);padding:20px 26px}
+  .vbw .popwarn .wt{font-size:13.5px;font-weight:800;color:var(--danger,#B4341F);margin-bottom:14px;
+    display:flex;align-items:center;gap:7px}
+  .vbw .popwarn .wt::before{content:"";width:16px;height:2px;background:var(--danger,#B4341F)}
+  .vbw .popwarn ol{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .vbw .popwarn li{display:flex;gap:12px;align-items:flex-start}
+  .vbw .popwarn .no{flex:none;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--navy-300);
+    padding-top:2px;letter-spacing:.02em}
+  .vbw .popwarn .tx{display:block}
+  .vbw .popwarn .tx b{display:block;font-size:14px;font-weight:800;color:var(--ink);line-height:1.5}
+  .vbw .popwarn .tx em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:2px}
+  .vbw .poptel{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding:18px 26px;background:#fff}
+  .vbw .poptel .tl{font-size:13px;color:var(--ink-2);line-height:1.6}
+  .vbw .poptel a{font-family:var(--display);font-weight:900;font-size:24px;color:var(--navy);
+    letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--gold);padding-bottom:2px}
+  .vbw .poptel a:hover{color:var(--navy-700)}
+  .vbw .popfoot{display:flex;gap:10px;padding:0 26px 24px}
+  .vbw .popfoot button{flex:1;border-radius:9px;font-family:var(--sans);font-size:14px;cursor:pointer;
+    min-height:50px;padding:0 10px;transition:background-color .16s,color .16s,border-color .16s}
+  .vbw .popfoot #popDay{flex:0 1 44%;background:#fff;border:1px solid var(--line-2);color:var(--muted)}
+  .vbw .popfoot #popDay:hover{border-color:var(--navy-300);color:var(--navy)}
+  .vbw .popfoot .prim{background:var(--navy);border:1px solid var(--navy);color:#fff;font-weight:700}
+  .vbw .popfoot .prim:hover{background:var(--navy-700)}
+  @media (max-width:440px){
+    .vbw .pop{padding:14px}
+    .vbw .poptop{padding:22px 19px 18px}
+    .vbw .poptop h2{font-size:19.5px}
+    .vbw .popwarn{padding:18px 19px}
+    .vbw .poptel{padding:16px 19px;gap:8px}
+    .vbw .poptel a{font-size:22px}
+    .vbw .popfoot{padding:0 19px 20px;gap:8px}
+    .vbw .popfoot button{font-size:13.5px;min-height:48px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .vbw .pop, .vbw .popbox{transition:none}
+    .vbw .popbox{transform:none}
+  }
+  .vbw .c4gap .btn-gold{box-shadow:0 10px 28px rgba(252,208,101,.26)}
+  .vbw .card, .vbw .tile, .vbw .plate, .vbw .btn, .vbw .hd nav a, .vbw .foot-links a, .vbw summary, .vbw .chips button{transition:border-color .18s ease,background-color .18s ease,color .18s ease}
+  @media (max-width:720px){
+    .vbw .hd .tel, .vbw .hd .btn{display:none}
+  }
+
+  /* ── 호스팅 사이트 기본 스타일에 덮이지 않도록 하는 방어 규칙 ── */
+  .vbw a{color:inherit}
+  .vbw a.btn,.vbw a.btn:visited,.vbw a.btn:hover{text-decoration:none}
+  .vbw a.btn,.vbw button.btn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    height:52px!important;padding:0 26px!important;border-radius:6px!important;
+    font-weight:700!important;font-size:15px!important;border:1.5px solid transparent!important;
+    font-family:var(--sans)!important;line-height:1!important;width:auto!important}
+  .vbw a.btn-block,.vbw button.btn-block{width:100%!important}
+  .vbw a.btn-gold,.vbw button.btn-gold{
+    background:var(--gold)!important;background-color:var(--gold)!important;
+    color:var(--ink)!important;border-color:var(--gold)!important}
+  .vbw a.btn-gold:hover,.vbw button.btn-gold:hover{background-color:#EFBB3F!important}
+  .vbw a.btn-navy,.vbw button.btn-navy{
+    background-color:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important}
+  .vbw a.btn-navy:hover,.vbw button.btn-navy:hover{background-color:var(--navy-700)!important}
+  .vbw a.btn-ghost,.vbw button.btn-ghost{
+    background-color:transparent!important;color:var(--navy)!important;border-color:var(--line-2)!important}
+  .vbw .c2chips button,.vbw .ck{background-color:#fff!important}
+  .vbw .c2chips button.on{background-color:var(--navy)!important;color:#fff!important}
+  .vbw .ck[aria-pressed="true"]{background-color:var(--navy-50)!important}
+
+
+  /* ── 아임웹 기본 팝업(유사기업 주의) 숨기기 ──
+     관리자에서 그 팝업을 끄셨다면 이 두 줄은 지우셔도 됩니다.
+     못 찾으셨다면 그대로 두세요. 이 줄이 대신 가려 줍니다. */
+  .popup-banner-wrap{display:none!important}
+</style>
+
+<div class="vbw">
+<div class="vb-pop-anchor" aria-hidden="true"></div>
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popTitle">
+  <div class="popbox">
+    <button class="popx" type="button" id="popX" aria-label="닫기">&#10005;</button>
+
+    <div class="poptop">
+      <span class="pchip">주의 안내</span>
+      <h2 id="popTitle">정책자금을 미끼로 한<br><b>제3자 부당개입</b>에 주의하세요</h2>
+      <p>윤파트너스는 소상공인과 소기업의 자금과 인증을 다루는 경영컨설팅 기업입니다.<br>대표님께서 안심하고 상담받으실 수 있도록 먼저 알려드립니다.</p>
+    </div>
+
+    <div class="popwarn">
+      <div class="wt">이런 제안을 받으셨다면 멈추십시오</div>
+      <ol>
+          <li>
+            <span class="no">01</span>
+            <span class="tx"><b>정부기관 · 공무원 사칭</b><em>기관 직원이라며 접근하거나 소속을 모호하게 말하는 경우</em></span>
+          </li>
+          <li>
+            <span class="no">02</span>
+            <span class="tx"><b>서류 조작 · 매출 부풀리기</b><em>재무자료를 실제와 다르게 꾸며 신청하자는 제안</em></span>
+          </li>
+          <li>
+            <span class="no">03</span>
+            <span class="tx"><b>자금 실행 보장 약속</b><em>심사 전에 승인이나 한도를 확정적으로 약속하는 말</em></span>
+          </li>
+          <li>
+            <span class="no">04</span>
+            <span class="tx"><b>착수금 · 수수료 선요구</b><em>진행 전에 금액부터 입금하라고 요구하는 경우</em></span>
+          </li>
+          <li>
+            <span class="no">05</span>
+            <span class="tx"><b>보험 가입 등 끼워 넣기</b><em>자금 지원을 조건으로 다른 상품 가입을 유도하는 행위</em></span>
+          </li>
+      </ol>
+    </div>
+
+    <div class="poptel">
+      <div class="tl">위와 같은 일을 겪으셨다면 알려 주세요</div>
+      <a href="tel:15550934">[대표번호]</a>
+    </div>
+
+    <div class="popfoot">
+      <button type="button" id="popDay">오늘 하루 보지 않기</button>
+      <button type="button" class="prim" id="popClose">확인했습니다</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function () {
+var pop = document.getElementById('pop');
+    if (!pop) return;
+    var KEY = 'vb_notice_until';
+    var last = null;
+
+    function hidden() {
+      try {
+        var v = localStorage.getItem(KEY);
+        return v && Date.now() < parseInt(v, 10);
+      } catch (e) { return false; }
+    }
+    function open() {
+      last = document.activeElement;
+      pop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () { pop.classList.add('on'); }, 20);
+      var x = document.getElementById('popX');
+      if (x) x.focus();
+    }
+    function close() {
+      pop.classList.remove('on');
+      document.body.style.overflow = '';
+      setTimeout(function () { pop.classList.remove('open'); }, 260);
+      if (last && last.focus) last.focus();
+    }
+    function hideToday() {
+      try {
+        var d = new Date(); d.setHours(24, 0, 0, 0);   // 오늘 자정까지
+        localStorage.setItem(KEY, String(d.getTime()));
+      } catch (e) {}
+      close();
+    }
+
+    document.getElementById('popX').addEventListener('click', close);
+    document.getElementById('popClose').addEventListener('click', close);
+    document.getElementById('popDay').addEventListener('click', hideToday);
+    pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && pop.classList.contains('open')) close();
+    });
+
+    if (!hidden()) setTimeout(open, 700);
+  })();
+
+  // ---------- 동의 체크박스 (전체 동의 연동) ----------
+  (function () {
+    var box = document.getElementById('agree');
+    if (!box) return;
+    var all = document.getElementById('agAll');
+    var items = box.querySelectorAll('.ag');
+    if (!all || !items.length) return;
+    function sync() {
+      var on = true;
+      Array.prototype.forEach.call(items, function (c) { if (!c.checked) on = false; });
+      all.checked = on;
+    }
+    all.addEventListener('change', function () {
+      Array.prototype.forEach.call(items, function (c) { c.checked = all.checked; });
+    });
+    Array.prototype.forEach.call(items, function (c) { c.addEventListener('change', sync); });
+
+    var det = box.querySelector('details'), wrap = box.querySelector('.dwrap');
+    if (det && wrap) {
+      det.addEventListener('toggle', function () { wrap.hidden = !det.open; });
+    }
+})();
+</script>
+</div>
+</main>
+
+<footer class="vb-ft">
+  <div class="vb-ft-in">
+    <img src="/images/1_브랜드/YOON_PARTNERS_white.png" alt="윤파트너스" width="519" height="160">
+    <p class="biz"><span>상호 <b>윤파트너스</b></span><span>대표 [대표자명]</span>
+      <span>사업자등록번호 [사업자등록번호]</span></p>
+    <p>[주소], [상세주소]</p>
+    <p>대표전화 <a href="tel:[대표번호]"><b>[대표번호]</b></a> · 이메일 [이메일]</p>
+    <p>개인정보관리책임자 [대표자명]</p>
+    <nav class="vb-ft-links" aria-label="약관">
+      <a href="/terms.html">이용약관</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+    </nav>
+    <p class="copy">Copyright © 2026 윤파트너스. All rights reserved.</p>
+  </div>
+</footer>
+
+<nav class="vb-bar" aria-label="바로가기">
+  <a class="call" href="tel:[대표번호]">전화</a>
+  <!-- 카카오톡 채널 주소가 정해지면 아래 줄의 주석을 풀고 grid-template-columns 를 1fr 1fr 1.5fr 로 바꾸세요
+  <a class="call" href="[카카오톡채널주소]" target="_blank" rel="noopener">카카오톡</a> -->
+  <a class="apply" href="#apply">무료 진단 신청</a>
+</nav>
+
+<script>
+(function () {
+  var hd = document.getElementById('vbHd'), b = document.getElementById('vbBurger');
+  if (!hd || !b) return;
+  b.addEventListener('click', function () {
+    var open = hd.classList.toggle('vb-open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    b.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  });
+  hd.querySelectorAll('.vb-nav a, .vb-hd-cta a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      hd.classList.remove('vb-open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+</body>
+</html>
