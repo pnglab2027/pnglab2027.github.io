@@ -102,7 +102,7 @@ main{overflow-x:hidden}
 /* ── 모바일 하단 바 ──────────────────────────────────── */
 .vb-bar{display:none}
 @media (max-width:900px){
-  .vb-bar{display:grid;grid-template-columns:1fr 1.5fr;gap:8px;
+  .vb-bar{display:grid;grid-template-columns:1fr;gap:8px;
     position:fixed;left:0;right:0;bottom:0;z-index:99;background:#fff;
     border-top:1px solid var(--vb-line);box-shadow:0 -6px 22px rgba(23,35,66,.1);
     padding:9px max(14px,env(safe-area-inset-left,0px))
